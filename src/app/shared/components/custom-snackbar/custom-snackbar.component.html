@@ -1,0 +1,7 @@
+<main class="snakebar">
+  <img [src]="data.image" alt="Image" width="50" height="50" />
+  <span>{{ data.message }}</span>
+  <div class="btn" mat-button color="red" (click)="data.onActionClick()">
+    <i [class]="data.icon"></i>
+  </div>
+</main>

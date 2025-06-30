@@ -1,0 +1,253 @@
+<main class="Categories wow animate__fadeIn" data-wow-delay=".2s">
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner ">
+      <div class="carousel-item active">
+        <div class="cat_image">
+          <img src="assets/cat-1.jpg" alt="categories_imge" />
+          <div class="cat_description ">
+            <h1>Best Furtniture Ideas</h1>
+            <p>
+              Explore Our Latest Furniture Collections And Transform Your Home.
+            </p>
+            <div class="cat_btn">
+              <i class="fas fa-chevron-down"></i>
+              <span>Products Below</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="cat_image">
+          <img src="assets/cat-2.jpg" alt="categories_imge" />
+          <div class="cat_description">
+            <h1>Furniture Showcase</h1>
+            <p>Discover The Perfect Pieces For Your Living Space.</p>
+            <div class="cat_btn">
+              <i class="fas fa-chevron-down"></i>
+              <span>Products Below</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="cat_image">
+          <img src="assets/cat-3.jpg" alt="categories_imge" />
+          <div class="cat_description">
+            <h1>Modern Home Decor</h1>
+            <p>Elevate Your Home Decor With Our Unique Furniture Designs.</p>
+            <div class="cat_btn">
+              <i class="fas fa-chevron-down"></i>
+              <span>Products Below</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</main>
+<main class="All_categories">
+  <section class="categories_filter_icon">
+    <div class="all_cat_icon">
+      <div class="cat_icon wow animate__bounceIn" data-wow-delay=".1s">
+        <i class="fa-solid fa-list" id="flexlist"></i>
+      </div>
+      <div class="cat_icon wow animate__bounceIn" data-wow-delay=".2s">
+        <i class="fa-solid fa-table-cells" id="gridlist"></i>
+      </div>
+      <div class="cat_icon wow animate__bounceIn" data-wow-delay=".3s" (click)="OpenFilterBox.set(true)">
+        <i class="fa-solid fa-filter" id="fliter"></i>
+      </div>
+    </div>
+    <div class="cat_counter">
+      <p>Showing <span>{{counter()}}</span> Products</p>
+    </div>
+  </section>
+  <section class="All_cat_container">
+    <div class="filteration_boxing" [class.active]="OpenFilterBox()" id="fliter-box">
+      <div class="head-filter-box">
+        <h1 class="wow animate__fadeIn m-0" data-wow-delay=".2s">Filter</h1>
+        <div class="close_icon" id="close" (click)="OpenFilterBox.set(false)">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+
+      @for(section of filterSections; track section.id ; let i = $index){
+      <div class="filter_box wow animate__fadeInLeftBig" [attr.data-wow-delay]="'.' + (i + 1) + 's'">
+        <div class="header_box_Categorieas">
+          <h1>{{ section.title }}</h1>
+          <p class="close_menu" [class.active]="sectionStates()[i]" (click)="toggleSection(i)">-</p>
+          @if(!sectionStates()[i]){
+          <p class="open_menu" (click)="toggleSection(i)">+</p>
+          }
+
+        </div>
+        <div class="menu_box" [class.active]="sectionStates()[i]">
+          @if(section.title !== 'Price'){
+          @for(option of section.options; track option.id){
+          <div class="menu_box_categories">
+            <input type="checkbox" [id]="option.id" [name]="option.name" [value]="option.value" />
+            <p>{{ option.name }}</p>
+            @if(section.title === 'Rating'){
+            <div class="all_rating_categories">
+              <div class="start_rating_categories">
+                <div class="categories_rating">
+                  @for (star of [].constructor(option.stars); track star) {
+                  <i class="fa-solid fa-star"></i>
+                  }
+                  @for (star of [].constructor(5 - option.stars); track star) {
+                  <i class="fa-regular fa-star"></i>
+
+                  }
+                </div>
+              </div>
+              <p class="stars-label">{{ option.label }}</p>
+            </div>
+            }
+
+          </div>
+          }
+
+          }
+
+          @if(section.title === 'Price'){
+          <div class="menu_box_categories">
+            <div class="all_range_price">
+              <div class="range_input ">
+                <div class="input-filed d-flex align-items-center gap-2 mt-3">
+                  <div class="field d-flex align-items-center flex-fill">
+                    <p>Min:</p>
+                    <input type="number" [(ngModel)]="minValue" [min]="section.priceRange.min"
+                      [max]="section.priceRange.max" (change)="onMinChange($event)" />
+                  </div>
+                  <div class="field d-flex align-items-center flex-fill">
+                    <p>Max:</p>
+                    <input type="number" [(ngModel)]="maxValue" [min]="section.priceRange.min"
+                      [max]="section.priceRange.max" (change)="onMaxChange($event)" />
+                  </div>
+                </div>
+
+                <div class="slider">
+                  <div class="progress" [style.left]="calculateProgress(minValue) + '%'"
+                    [style.right]="calculateProgress(section.priceRange.max - maxValue) + '%'"></div>
+                </div>
+                <div class="range-inpute">
+                  <input type="range" [(ngModel)]="minValue" [min]="section.priceRange.min"
+                    [max]="section.priceRange.max" (input)="onMinChange($event)" />
+                  <input type="range" [(ngModel)]="maxValue" [min]="section.priceRange.min"
+                    [max]="section.priceRange.max" (input)="onMaxChange($event)" />
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          }
+
+        </div>
+      </div>
+      }
+
+      <button class="clear_filter wow animate__fadeInLeftBig" data-wow-delay=".7s">Clear Filter</button>
+    </div>
+
+    <div class="product_categories">
+      @if(!endResponse()){
+        <div class="container-fluid py-4 justify-content-center">
+          <app-skeleton-card></app-skeleton-card>
+
+            </div>
+      }@else {
+      <form>
+        <div class="product_categories_container" id="prdcat">
+          @for (product of vListAllPrd(); track product.id ; let i = $index) {
+          <div class="ternd_pox wow fadeInUp" [attr.data-wow-delay]="(i * 0.05) + 's'" id="tbox"
+            [ngStyle]="{'opacity': product.quantityAvailable ==0 ? '0.2':'1','pointer-events':product.quantityAvailable ==0 ? 'none':''}">
+            <div class="ternd_image ">
+              <div class="checked-icon d-flex align-items-center gap-2">
+                <i class="fa-solid fa-wallet text-success" [hidden]="!checkIfProductInCart(product.id) "></i>
+                <i class="fa-solid fa-heart text-danger" [hidden]="!checkIfProductInFavorite(product.id) "></i>
+
+              </div>
+              <img src="{{product.image}}" alt="all categories image" id="fleximg">
+              <div class="icon_box">
+                <i class="fa-solid fa-heart" (click)="postproductTofavorite(product)"
+                  [ngStyle]="{'color': checkIfProductInFavorite(product.id) ? 'red' : '#777'}"></i>
+                <i class="fa-solid fa-wallet" (click)="addToCart(product)"
+                  [ngStyle]="{'color':  checkIfProductInCart(product.id) ? 'green' : '#777'}"></i>
+                <i class="fa-regular fa-share-from-square"></i>
+                <i class="fa-solid fa-eye" [routerLink]="['/product/'+ product.id]"></i>
+              </div>
+            </div>
+            <div class="ternd_content">
+              <h1>{{product.title}}</h1>
+              <p [routerLink]="['/product/'+ product.id]">{{ product.description }}</p>
+              <div class="Quantity-Avilable">
+                <p>Quantity Available: {{product.quantityAvailable}} <span>(Items)</span> </p>
+              </div>
+              <div class="about_price">
+
+                <div class="ternd_price">
+                  <p>{{ product.newPrice | currency:'USD':'symbol':'1.2-2' }}</p>
+                  <span>{{ product.oldPrice | currency:'USD':'symbol':'1.2-2' }}</span>
+                </div>
+                <div class="rating">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+
+                </div>
+              </div>
+              <div class="btn" [hidden]="product.quantityAvailable ==0">
+                <ng-container *ngIf="!checkIfProductInCart(product.id)">
+                  <button type="submit" (click)="addToCart(product)">
+                    <i class="fa fa-cart-plus"></i>
+                    <p>Add To Cart</p>
+                  </button>
+                </ng-container>
+                <ng-container *ngIf="checkIfProductInCart(product.id)">
+                  <button type="submit" (click)="addToCart(product)" class="btn-added">
+                    <i class="fa fa-check"></i>
+                    <p>Added To Cart</p>
+                  </button>
+                </ng-container>
+
+              </div>
+            </div>
+          </div>
+          }
+
+
+        </div>
+      </form>
+
+      <div class="see_more">
+        <div class="dir_btn wow animate__bounceIn" data-wow-delay=".1s">
+          <i class="fa-solid fa-arrow-left"></i>
+        </div>
+        <div class="btn_num">
+          <p class="wow animate__bounceIn" data-wow-delay=".2s">1</p>
+          <p class="wow animate__bounceIn" data-wow-delay=".3s">2</p>
+          <p class="wow animate__bounceIn" data-wow-delay=".4s">3</p>
+
+        </div>
+        <div class="dir_btn wow animate__bounceIn" data-wow-delay=".5s">
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </div>
+      }
+
+
+    </div>
+
+  </section>
+</main>

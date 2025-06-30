@@ -1,0 +1,119 @@
+.modern_perant{
+  background-color: rgb(243 244 246 / 1);
+    padding: 25px;
+    width: 100%;
+    .modern_header{
+      text-align: center;
+      margin-bottom: 2.5rem;
+
+      h1{
+      color: #2E8B57;
+      margin: 35px 0
+      }
+      p{
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 1;
+      }
+
+    }
+    .modern-container {
+      overflow: hidden;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  grid-auto-rows: 200px;
+  grid-auto-flow: dense;
+
+  @media (max-width:992px) {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+ .wide,.tile,.big{
+      grid-column: span 1 !important;
+      grid-row: span 1 !important;
+    }
+  }
+    @media (max-width:600px) {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .wide {
+    grid-column: span 2;
+  }
+
+  .tile {
+    grid-row: span 2;
+  }
+
+  .big {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .modern_image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .modern_content {
+      background: linear-gradient(to top, #00000096, #0000000d);
+      padding: 10px;
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+      .modern_title {
+        flex-direction: row-reverse;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .modern_icon {
+          background-color: white;
+          width: 30px;
+          height: 30px;
+          text-align: center;
+          padding: 8px;
+          border-radius: 50%;
+          transform: rotate(45deg);
+          cursor: pointer;
+          i {
+            color: black;
+            font-size: 1.2rem;
+          }
+        }
+        h1{
+          font-weight: 500;
+          font-size: 2rem;
+          color: white;
+          margin: 0;
+
+        }
+      }
+      p{
+        margin: 15px 0;
+        color: white;font-weight: 400;
+        font-size: 1.2rem;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+}
+
+

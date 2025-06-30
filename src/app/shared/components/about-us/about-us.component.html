@@ -1,0 +1,150 @@
+<main class="about-us-parent">
+  <app-header-section class=" wow fadeInUp" data-wow-delay="0.1s">
+    <div class="about-us-image" about-image>
+      <img  src="assets/About-Us.jpeg" height ="400px" width="100%" alt="About-Us_Image">
+    </div>
+    <div about-title>About Us</div>
+      <ng-container about-breadcrumb><a about-link  routerLink="/Feature" class="text-light text-decoration-none">Home</a> /About Us</ng-container>
+  </app-header-section>
+<section class="company-history">
+  <div class="history-content">
+    <div class="history-image">
+      <img src="assets/About.jpeg" alt="Company history image" class=" wow animate__zoomIn" data-wow-delay=".1s">
+    </div>
+
+    <div class="history-text">
+      <div  class=" wow animate__zoomIn" data-wow-delay=".2s">
+          <h2>Our Journey</h2>
+      <p>
+        Since our Company dedicated to providing stylish, high-quality furniture that transforms any space into a home. With a commitment to craftsmanship, innovation, and design excellence, we've grown into a trusted industry leader. Our curated collections combine comfort with modern aesthetics, ensuring that every piece we create not only looks beautiful but also stands the test of time. Whether you're furnishing a cozy apartment or a spacious home,offers the perfect blend of functionality and style to meet all your needs. Join us on our journey to redefine living spaces and experience the art of living well.
+      </p>
+    </div>
+
+
+
+      <div class="company-history-list">
+        <div class="list-box">
+          <div class="history-icon wow animate__slideInLeft" data-wow-delay=".1s">
+            <i class="fas fa-eye"></i>
+            <p>Craftsmanship in every detail.</p>
+          </div>
+
+          <div class="history-icon wow animate__slideInRight" data-wow-delay=".2s">
+            <i class="fas fa-thumbs-up"></i>
+            <p>Commitment to quality.</p>
+          </div>
+          <div class="history-icon wow animate__slideInLeft" data-wow-delay=".3s">
+            <i class="fas fa-truck"></i>
+            <p>Efficient and eco-friendly delivery.</p>
+          </div>
+          <div class="history-icon wow animate__slideInRight" data-wow-delay=".4s">
+            <i class="fas fa-heart"></i>
+            <p>Customer satisfaction at the heart.</p>
+          </div>
+          <div class="history-icon wow animate__slideInLeft" data-wow-delay=".5s">
+            <i class="fas fa-cogs"></i>
+            <p>Innovative product designs.</p>
+          </div>
+          <div class="history-icon wow animate__slideInRight" data-wow-delay=".6s">
+            <i class="fas fa-check-circle"></i>
+            <p>Trust and reliability in our service.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action Button -->
+      <div class="cta-section wow animate__fadeIn" data-wow-delay=".7s">
+        <a href="/Contact" class="cta-button">Learn More About Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Mission, Vision, and Values with icons -->
+  <section class="mission-vision-values">
+    <div class="mission-vision-values-container">
+      <div class="mission wow animate__fadeInUp" data-wow-delay=".1s">
+        <i class="fas fa-bullseye"></i>
+        <h2>Our Mission</h2>
+        <p>We deliver beautiful, functional furniture with top-quality craftsmanship and a focus on design that enhances the comfort and aesthetics of your home.</p>
+      </div>
+      <div class="vision wow animate__fadeInUp" data-wow-delay=".2s">
+        <i class="fas fa-eye"></i>
+        <h2>Our Vision</h2>
+        <p>To be the preferred choice for high-quality, stylish furniture globally, offering pieces that seamlessly blend design and functionality to improve lives.</p>
+      </div>
+      <div class="values wow animate__fadeInUp" data-wow-delay=".3s">
+        <i class="fas fa-handshake"></i>
+        <h2>Our Values</h2>
+        <p>We believe in integrity, customer satisfaction, and sustainable practices, focusing on creating responsible, beautiful furniture that suits every lifestyle.</p>
+      </div>
+    </div>
+  </section>
+  <!-- Testimonials with icon and reduced text -->
+  <section class="customer-testimonials">
+    <h2>What Customers Say</h2>
+    <div class="testimonial-container">
+      @for (testimonial of testimonials; track testimonial.id; let i=$index) {
+   <div class="testimonial wow fadeInUp"  [attr.data-wow-delay]="(i * 0.1) + 's'">
+        <i class="fas fa-quote-left"></i>
+        <p>"{{ testimonial.quote }}"</p>
+        <h4>- {{ testimonial.author }}</h4>
+      </div>
+      }
+
+    </div>
+  </section>
+  <!-- Team section with side by side images and description -->
+   <app-customer-reviews >
+    <h1 class=" display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s" style="  color: black;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    font-family: emoji;">
+      Our team
+    </h1>
+   </app-customer-reviews>
+
+
+
+  <!-- Awards and Achievements -->
+  <section class="awards-achievements">
+    <h2 class="wow animate__fadeIn" data-wow-delay=".1s">Our Achievements</h2>
+    <div class="achievements-container">
+      <div class="achievement wow animate__fadeInUp" data-wow-delay=".1s">
+        <i class="fas fa-users"></i>
+        <h3>100,000+ Customers</h3>
+        <p>We proudly serve over 100,000 customers worldwide.</p>
+      </div>
+      <div class="achievement wow animate__fadeInUp" data-wow-delay=".2s">
+        <i class="fas fa-trophy"></i>
+        <h3>50 Awards</h3>
+        <p>Recognized with 50 awards for excellence in design and quality.</p>
+      </div>
+      <div class="achievement wow animate__fadeInUp" data-wow-delay=".3s">
+        <i class="fas fa-globe"></i>
+        <h3>Global Reach</h3>
+        <p>Our products are available in over 20 countries around the globe.</p>
+      </div>
+      <div class="achievement wow animate__fadeInUp" data-wow-delay=".4s">
+        <i class="fas fa-recycle"></i>
+        <h3>50% Sustainable Materials</h3>
+        <p>Committed to using 50% sustainable materials in our products.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Sustainability section -->
+  <section class="sustainability wow animate__zoomIn" data-wow-delay=".1s">
+    <h2>Sustainability</h2>
+    <p>We prioritize eco-friendly materials and processes, ensuring sustainable practices in every product.</p>
+  </section>
+
+  <!-- Call to action -->
+  <section class="call-to-action wow animate__zoomIn" data-wow-delay=".2s">
+    <h2>Join Us</h2>
+    <p>Explore our collection and be part of our story.</p>
+    <a routerLink="/Contact" class="cta-button">Get in Touch</a>
+  </section>
+</main>

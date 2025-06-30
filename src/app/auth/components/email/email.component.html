@@ -1,0 +1,39 @@
+<div class="Forget-page">
+
+  <mat-card>
+    <mat-card-content>
+      <h1 class="m-0 mb-2 text-900 text-3xl font-bold">Forget Password</h1>
+      <form  name="loginForm" [formGroup]="emailFm">
+        <div class="emailInput">
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+              formControlName="email"
+              matInput
+              placeholder="Enter email address" required
+            />
+
+            <mat-icon matSuffix>
+                email
+            </mat-icon>
+
+            <mat-error *ngIf="emailFm.controls['email']?.invalid && emailFm.controls['email']?.touched && emailFm.controls['email'].errors?.['required']"            >
+                Email is required
+              </mat-error>
+              <mat-error   *ngIf="emailFm.controls['email']?.invalid && emailFm.controls['email']?.touched && emailFm.controls['email'].errors?.['pattern']">
+                Invalid email format
+              </mat-error>
+          </mat-form-field>
+          <span>
+            <a class="text-link" class="aLink" routerLink="/enter/signtin">Sign In?</a>
+          </span>
+        </div>
+
+        <button    [disabled]="emailFm.invalid"
+        routerLink="/enter/code" mat-flat-button color="Login mt-2 w-100">Send</button>
+      </form>
+      <p class="text-sm mt-3 mb-4 font-bold text-400">Not a Member yet? <a routerLink="/enter/signup" class="text-primary font-medium ml-1 hover:text-primary-400 transition-duration-100">Sign up</a></p>
+    </mat-card-content>
+  </mat-card>
+</div>

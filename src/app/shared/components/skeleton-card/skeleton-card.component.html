@@ -1,0 +1,30 @@
+<section class="grid-skeleton">
+  @for (category of [1, 2, 3, 4, 5, 6, 7]; track $index) {
+  <section class=" mb-4" style="width: 100%;">
+  <div class="ternd_image position-relative">
+    <ngx-skeleton-loader count="1" appearance="line"
+      [theme]="{ 'height': '200px',   'background-color': '#e2e8f0', 'width': '100%' }"></ngx-skeleton-loader>
+  </div>
+  <div class="ternd_content px-2 py-3">
+    <ngx-skeleton-loader count="1" appearance="line"
+      [theme]="{ 'height': '20px',   'background-color': '#e2e8f0', 'width': '80%', 'margin-bottom': '10px' }"></ngx-skeleton-loader>
+    <ngx-skeleton-loader count="2" appearance="line"
+      [theme]="{ 'height': '15px',   'background-color': '#e2e8f0', 'width': '100%', 'margin-bottom': '10px' }"></ngx-skeleton-loader>
+    <ngx-skeleton-loader count="1" appearance="line"
+      [theme]="{ 'height': '15px',    'background-color': '#e2e8f0','width': '50%', 'margin-bottom': '10px' }"></ngx-skeleton-loader>
+    <div class="about_price d-flex justify-content-between">
+      <ngx-skeleton-loader count="1" appearance="line"
+        [theme]="{ 'height': '20px',   'background-color': '#e2e8f0', 'width': '40%' }"></ngx-skeleton-loader>
+      <ngx-skeleton-loader count="1" appearance="line"
+        [theme]="{ 'height': '20px',   'background-color': '#e2e8f0', 'width': '40%' }"></ngx-skeleton-loader>
+    </div>
+    <ngx-skeleton-loader count="1" appearance="line"
+      [theme]="{ 'height': '40px',    'background-color': '#e2e8f0','width': '100%', 'border-radius': '5px' }"></ngx-skeleton-loader>
+  </div>
+</section>
+}
+</section>
+
+
+
+

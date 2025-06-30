@@ -1,0 +1,164 @@
+// src/styles/_shared-styles.scss
+$primary-color: #2E8B57;
+$secondary-color: #688272;
+$accent-color: #e74c3c;
+$warning-color: #ff5722;
+$input-bg: #eff2f1;
+$size-midum:20px;
+$size-midum2:17px;
+$size-small: 10px;
+$size-small2: 15px;
+$width:100%;
+// Button Styles
+//------------------------
+$white: #fff;
+$max-width: 600px;
+$medium-width: 350px;
+// Spacing
+$spacing-large: 20px;
+$spacing-medium: 10px;
+$spacing-small: 5px;
+
+
+// Mixin for flexbox
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Mixin for border radius
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+@mixin MatCard-style{
+  max-width: 800px;
+  margin: $spacing-large auto;
+  text-align: center;
+  max-height: $width;
+  padding: 5px;
+}
+//----------------------
+@mixin button-primary {
+  margin: $size-small;
+  background-color: $primary-color;
+  padding: $size-small 10%;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  outline: none;
+  border: 1px solid $primary-color;
+  border-radius: 50px;
+  transition: 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background: white;
+    color: $primary-color;
+  }
+}
+
+@mixin button-secondary {
+  margin: $size-small;
+  background-color: #f3f4f6;
+  padding: $size-small 10%;
+  color: $primary-color;
+  font-size: 1.2rem;
+  font-weight: 500;
+  outline: none;
+  border: 1px solid #7773;
+  border-radius: 50px;
+  transition: 0.3s ease;
+cursor: pointer;
+  &:hover {
+    background: $primary-color;
+    color: white;
+  }
+}
+
+// Input Field Styles
+@mixin input-field {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  margin: $size-small 0;
+  width: $width;
+
+  span {
+    width: 40px;
+    height: 40px;
+    padding: $size-small;
+    background-color: #eff2f1;
+    border-radius: 50%;
+
+    i {
+      font-size: 1rem;
+      color: $primary-color;
+    }
+  }
+
+  input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    margin-left: $size-small;
+    width: $width;
+    padding: $size-small 0;
+
+    &::placeholder {
+      font-size: 1rem;
+      color: #ccc;
+    }
+  }
+}
+// Input Field Styles
+.input-field {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  margin: $size-small 0;
+  width: $width;
+
+  span {
+    width: 40px;
+    height: 40px;
+    padding: $size-small;
+    background-color: #eff2f1;
+    border-radius: 50%;
+
+    i {
+      font-size: 1rem;
+      color: $primary-color;
+    }
+  }
+
+  input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    margin-left: $size-small;
+    width: $width;
+    padding: $size-small 0;
+
+    &::placeholder {
+      font-size: 1rem;
+      color: #ccc;
+    }
+  }
+}
+// src/styles/_shared-styles.scss
+
+// Flexbox utility mixin
+@mixin flex-center($direction: row, $justify: center, $align: center, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}

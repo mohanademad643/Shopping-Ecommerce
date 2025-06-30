@@ -1,0 +1,53 @@
+<div class="security-page">
+
+  <mat-card>
+    <mat-card-content>
+      <h1 class="m-0 mb-2 text-900 text-3xl font-bold">Forget Password</h1>
+      <form name="loginForm" [formGroup]="securityFm">
+        <div class="emailInput">
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>verify Code</mat-label>
+            <input formControlName="verifyCode" matInput placeholder="Enter verifyCode address" required />
+
+            <mat-icon matSuffix>
+              phone
+            </mat-icon>
+
+            <mat-error *ngIf="securityFm.controls['verifyCode'].errors?.['required']">
+              Verify code is required
+            </mat-error>
+            <mat-error *ngIf="securityFm.controls['verifyCode'].errors?.['minlength']">
+              Verify code must be at least 6 characters long.
+            </mat-error>
+          </mat-form-field>
+
+        </div>
+        <div class="emailInput">
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>phone Number</mat-label>
+            <input formControlName="phoneNumber" matInput placeholder="Enter phone Number" required />
+
+            <mat-icon matSuffix>
+              phone
+            </mat-icon>
+
+            <mat-error *ngIf="
+            securityFm.controls['phoneNumber'].invalid &&
+            securityFm.controls['phoneNumber'].touched
+          ">
+              phone Number is required
+            </mat-error>
+            <mat-error *ngIf="securityFm.controls['phoneNumber'].errors?.['minlength']">
+              Phone number must be at least 12 digits.
+            </mat-error>
+          </mat-form-field>
+
+        </div>
+        <button [disabled]="securityFm.invalid" routerLink="/Feature" mat-flat-button
+          color="Login mt-2 w-100">Send</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

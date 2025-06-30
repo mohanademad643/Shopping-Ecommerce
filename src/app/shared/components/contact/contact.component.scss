@@ -1,0 +1,141 @@
+// Global Variables
+@use '../../../../app/cart/SCSS/CartComponentStyle' as main;
+
+$primary-color: #2E8B57;
+$white-color: white;
+$secondary-color: #6c757d;
+$background-color: #f8f9fa;
+$text-color: #333;
+$border-radius: 10px;
+::ng-deep .success-snackbar {
+  background-color: #4caf50;
+  color: white;
+}
+.contact-parent {
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  color: $text-color;
+  padding: 0 0 50px 0;
+
+  .information {
+    text-align: center;
+    padding: 40px;
+
+    h2 {
+      font-size: 1rem;
+      color: $secondary-color;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: black;
+      font-weight: bold;
+    }
+
+    .info-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      .info-box {
+        max-width: 400px;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+
+        .info-icon {
+          margin-bottom: 15px;
+          font-size: 40px;
+          color: $primary-color;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+          margin-bottom: 10px;
+        }
+
+        p {
+          font-size: 1rem;
+          color: $secondary-color;
+        }
+      }
+      .active {
+        background-color: black;
+        .info-icon,
+        h2,
+        p {
+          color: $white-color !important;
+        }
+      }
+    }
+  }
+
+  .contact-form {
+    padding: 40px 15px;
+
+    .form-map-wrapper {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+
+      .form-section,
+      .map-section {
+        flex: 1;
+        min-width: 300px;
+        box-sizing: border-box;
+      }
+
+
+      .form-section {
+
+        mat-card {
+          box-shadow: none;
+          max-width: 800px;
+          text-align: center;
+          max-height: main.$width;
+
+          mat-card-content {
+            form {
+              textarea{
+                height: 150px;
+              }
+
+              mat-icon {
+                color: main.$primary-color;
+              }
+
+              .full-width {
+                width: main.$width;
+              }
+
+              .emailInput {
+                padding-top: main.$spacing-medium;
+              }
+
+              button {
+                background-color: main.$primary-color;
+                color: main.$white;
+              }
+            }
+          }
+        }
+
+      }
+
+      .map-section {
+        iframe {
+          width: 100%;
+          height: 100%;
+          min-height: 500px;
+
+        }
+      }
+    }
+  }
+
+}

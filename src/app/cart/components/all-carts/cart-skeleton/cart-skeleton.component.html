@@ -1,0 +1,43 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-xl-8 " >
+      @for (item of [1, 2, 3, 4, 5]; track $index) {
+        <ngx-skeleton-loader
+          class="d-block mb-3"
+          [theme]="{ height: '2rem', width: '100%', 'border-radius': '4px' }"
+        ></ngx-skeleton-loader>
+      }
+    </div>
+    <div class="col-12 col-xl-4 ">
+      <div class="border rounded bg-light p-5">
+        <ngx-skeleton-loader
+          class="d-block mb-2"
+          [theme]="{ height: '4rem', width: '100%', 'border-radius': '3rem' }"
+        ></ngx-skeleton-loader>
+        <ngx-skeleton-loader
+          class="d-block mb-1"
+          [theme]="{ height: '1.5rem', width: '100%', 'border-radius': '4px' }"
+        ></ngx-skeleton-loader>
+        <ngx-skeleton-loader
+          class="d-block mb-1"
+          [theme]="{ height: '1.5rem', width: '100%', 'border-radius': '4px' }"
+        ></ngx-skeleton-loader>
+        <ngx-skeleton-loader
+          class="d-block mb-3"
+          [theme]="{ height: '1.5rem', width: '100%', 'border-radius': '4px' }"
+        ></ngx-skeleton-loader>
+
+
+        <ngx-skeleton-loader
+          class="d-block mb-4"
+          [theme]="{ height: '3rem', width: '100%', 'border-radius': '3rem' }"
+        ></ngx-skeleton-loader>
+        <ngx-skeleton-loader
+        class="d-block mb-1"
+        [theme]="{ height: '1.5rem', width: '100%', 'border-radius': '4px' }"
+      ></ngx-skeleton-loader>
+      </div>
+    </div>
+  </div>
+</section>
+

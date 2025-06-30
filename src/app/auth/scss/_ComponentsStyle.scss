@@ -1,0 +1,57 @@
+// Colors
+$primary-color: #2e8b57;
+$secondary-color: #ccc;
+$white: #fff;
+$max-width: 600px;
+$medium-width: 350px;
+$width:100%;
+// Spacing
+$spacing-large: 20px;
+$spacing-medium: 10px;
+$spacing-small: 5px;
+
+
+// Mixin for flexbox
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Mixin for border radius
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+@mixin MatCard-style{
+  max-width: 800px;
+  margin: $spacing-large auto;
+  text-align: center;
+  max-height: $width;
+  padding: 15px;
+}
+@mixin OrWithEmail-style{
+  @include flex-center;
+  margin: $spacing-large 0;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: $width;
+    height: 1px;
+    background-color: $secondary-color;
+    z-index: 1;
+  }
+
+  p {
+    @include border-radius(50%);
+    z-index: 2;
+    padding: $spacing-small;
+    background-color: $white;
+    color: $primary-color;
+    font-size: 1rem;
+    margin: 0;
+  }
+}

@@ -1,0 +1,162 @@
+<div class="logup-page">
+
+  <mat-card>
+    <mat-card-content>
+      <h1 class="m-0 mb-2 text-900 text-3xl font-bold">Sign Up</h1>
+      <span class="block  text-primary text-400 text-sm font-semibold">Your Social Campaigns</span>
+      <div class="concat d-flex flex-wrap mt-2 justify-content-center gap-2 mb-1">
+        <p
+          class="text-13px cursor-pointer d-flex flex-wrap justify-content-center gap-2 border border-secondary border-1 p-1 ps-4 rounded-3">
+          <span>Sign Up With Google</span>
+          <img src="assets/google.jpg" class="mr-2 " alt="Google">
+        </p>
+        <p
+          class="text-13px cursor-pointer d-flex flex-wrap justify-content-center gap-2 border border-secondary border-1 p-1 ps-4 rounded-3">
+          <span>Sign Up With facebook</span>
+          <img src="assets/facebook.jpg" class="mr-2" alt="Apple">
+      </div>
+
+      <span class="or-with-email mb-4 text-sm">
+        <p>Or with email</p>
+      </span>
+      <form (ngSubmit)="RegisterAfterCheck()" name="RegisterForm" [formGroup]="registerForm">
+        <section class="Full-name  d-flex flex-wrap justify-content-center gap-2">
+          <div class="Frist-name flex-fill">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>First Name</mat-label>
+              <input formControlName="Fname" matInput placeholder="Enter First Name" required />
+
+              <mat-icon matSuffix>
+                person
+              </mat-icon>
+
+              <mat-error
+                *ngIf="registerForm.controls['Fname']?.invalid  && registerForm.controls['Fname'].errors?.['required']">
+                First Name is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="Last-name flex-fill">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Last Name</mat-label>
+              <input formControlName="Lname" matInput placeholder="Enter Last Name" required />
+
+              <mat-icon matSuffix>
+                person
+              </mat-icon>
+
+              <mat-error
+                *ngIf="registerForm.controls['Lname']?.invalid  && registerForm.controls['Lname'].errors?.['required']">
+                Last Name is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+        </section>
+        <section class="d-flex flex-wrap justify-content-center gap-2">
+          <div class="emailInput flex-fill">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Email</mat-label>
+              <input formControlName="email" matInput placeholder="Enter email address" required />
+
+              <mat-icon matSuffix>
+                email
+              </mat-icon>
+
+              <mat-error
+                *ngIf="registerForm.controls['email']?.invalid  && registerForm.controls['email'].errors?.['required']">
+                Email is required
+              </mat-error>
+              <mat-error
+                *ngIf="registerForm.controls['email']?.invalid  && registerForm.controls['email'].errors?.['pattern']">
+                Invalid email format
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="Phone-number-filed flex-fill">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Phone Number</mat-label>
+              <input formControlName="phoneNumber" matInput placeholder="01xxxxxxxxx" required />
+
+              <mat-icon matSuffix>
+                phone
+              </mat-icon>
+
+              <mat-error
+                *ngIf="registerForm.controls['phoneNumber']?.invalid && registerForm.controls['phoneNumber']?.errors?.['pattern']">
+                this number not valid
+              </mat-error>
+              <mat-error *ngIf=" registerForm.controls['phoneNumber'].errors?.['required']">
+                the Phone number is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </section>
+        <section class="d-flex flex-wrap justify-content-center gap-2">
+  <div class="gender-field flex-fill">
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Gender</mat-label>
+      <mat-select formControlName="Gender" required>
+        <mat-option value="Male">Male</mat-option>
+        <mat-option value="Female">Female</mat-option>
+      </mat-select>
+      <mat-icon matSuffix>wc</mat-icon>
+      <mat-error *ngIf="registerForm.controls['Gender']?.invalid && registerForm.controls['Gender'].errors?.['required']">
+        Gender is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+</section>
+        <section class="d-flex flex-wrap justify-content-center gap-2">
+          <div class="Password-filed flex-fill">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input formControlName="password" placeholder="Enter Your Password" matInput [type]=" hide() ? 'password' : 'text'" required />
+
+              <mat-icon mat-icon-button matSuffix (click)="hide.set(!hide())" [attr.aria-label]="'Hide Password'"
+                [attr.aria-pressed]="hide()">
+                {{hide() ? 'visibility_off' : 'visibility'}}
+              </mat-icon>
+
+              <mat-error
+                *ngIf="registerForm.controls['password']?.invalid  && registerForm.controls['password'].errors?.['required']">
+                Password is required
+              </mat-error>
+
+              <mat-error
+                *ngIf="registerForm.controls['password']?.invalid && registerForm.controls['password'].errors?.['minlength']">
+                must be at least 6 characters long
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="rePassword-filed flex-fill">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Re-Password</mat-label>
+              <input formControlName="repassword"placeholder="Re-Enter Your Password" matInput [type]=" hide_2() ? 'password' : 'text'" required />
+
+              <mat-icon mat-icon-button matSuffix (click)="hide_2.set(!hide_2())" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide_2()">
+                {{hide_2() ? 'visibility_off' : 'visibility'}}
+              </mat-icon>
+
+              <mat-error
+                *ngIf="registerForm.controls['repassword']?.invalid  && registerForm.controls['repassword'].errors?.['required']">
+                Re-Password is required
+              </mat-error>
+              <mat-error
+                *ngIf="registerForm.get('repassword')?.hasError('matchPasswords')">
+                Passwords do not match
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </section>
+
+        <button mat-flat-button color="mt-2 w-100">Register</button>
+      </form>
+      <p class="text-sm mt-3 mb-4 font-bold text-400">If You Have Account? <a routerLink="/enter/signtin"
+          class="text-primary font-medium ml-1 hover:text-primary-400 transition-duration-100">Sign In</a></p>
+
+    </mat-card-content>
+  </mat-card>
+
+</div>

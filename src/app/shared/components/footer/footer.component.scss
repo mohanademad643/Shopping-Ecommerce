@@ -1,0 +1,116 @@
+footer {
+  max-width: 100%;
+  background-color: #181e29;
+  .footer_contianer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    @media (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+    }
+    .footer_box {
+
+      h2 {
+        color: white;
+        padding: 20px 0;
+      }
+      .footer_content2 {
+        p {
+          color: white;
+          font-size: 13px;
+          padding: 5px;
+        }
+        .footer_search {
+          display: flex;
+          align-items: center;
+          background-color: white;
+          border-radius: 20px;
+          overflow: hidden;
+          margin: 0 10px;
+          span {
+            @media (max-width: 600px) {
+              color: white;
+              background-color: #2E8B57;
+              padding: 20px 5px;
+              font-size: 16px;
+            }
+            color: white;
+            background-color: #2E8B57;
+            padding: 10px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+          }
+          input::placeholder {
+            padding-left: 10px;
+            font-size: 12px;
+          }
+          input {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            width: 100%;
+            padding: 10px 0;
+          }
+        }
+      }
+      .footer_content {
+        .footer_icon {
+          display: flex;
+          align-items: flex-start;
+          padding:5px 0;
+          a,
+          i {
+            font-size: .8rem;
+            margin: 6px 12px 0 0;
+          }
+          a {
+            color: white;
+            text-decoration: none;
+          }
+          i {
+            color: #2E8B57;
+          }
+          p {
+            color: white;
+            font-size: .8rem;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+  .footer_payment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 500px) {
+      justify-content: center;
+    }
+    padding: 25px;
+    background-color: #121621;
+    p {
+      color: white;
+      font-size: 17px;
+      margin: 0;
+      @media (max-width: 500px) {
+        display: none;
+      }
+    }
+    .payment_icon {
+      display: flex;
+      align-items: center;
+      i {
+        @media (max-width: 600px) {
+          margin-right: 15px;
+          font-size: 25px;
+        }
+        margin-right: 25px;
+        font-size: 35px;
+        color: white;
+      }
+    }
+  }
+}

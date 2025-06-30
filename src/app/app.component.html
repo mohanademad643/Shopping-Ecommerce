@@ -1,0 +1,11 @@
+@if(showLoader() && getUserFromLocalStorage()){
+  <section class="loader">
+    <app-starting-loader></app-starting-loader>
+
+  </section>
+  }
+<ngx-spinner bdColor = "rgba(248,241,241,0.8)"
+size = "medium" color = "#2e8b57"
+type = "line-scale-pulse-out" [fullScreen] = "true">
+<p style="color: white" > Loading... </p></ngx-spinner>
+<router-outlet></router-outlet>

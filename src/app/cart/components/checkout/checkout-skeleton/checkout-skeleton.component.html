@@ -1,0 +1,55 @@
+<section class="wow animate__fadeInUp" data-wow-delay=".2s">
+    @for (item of [1, 2, 3]; track $index) {
+      <div class="item">
+        <div class="item-details d-flex align-items-center gap-2">
+          <div class="item-image">
+            <ngx-skeleton-loader
+              class="d-block"
+              [theme]="{
+                width: '100px',
+                height: '100px',
+                'border-radius': '5px',
+                   'background-color': '#e2e8f0',
+                'margin-bottom': '0'
+              }"
+            ></ngx-skeleton-loader>
+          </div>
+          <div class="item-info flex-fill">
+            <ngx-skeleton-loader
+              class="d-block mb-2"
+              [theme]="{
+                width: '80%',
+                height: '20px',
+                'border-radius': '4px',
+                   'background-color': '#e2e8f0',
+                'margin-bottom': '0'
+              }"
+            ></ngx-skeleton-loader>
+            <div class="price-and-quantity">
+              <ngx-skeleton-loader
+                class="d-block"
+                [theme]="{
+                  width: '70%',
+                  height: '16px',
+                  'border-radius': '4px',
+                     'background-color': '#e2e8f0',
+                  'margin-bottom': '0'
+                }"
+              ></ngx-skeleton-loader>
+     
+            </div>
+            <ngx-skeleton-loader
+              class="d-block"
+              [theme]="{
+                width: '60%',
+                height: '16px',
+                'border-radius': '4px',
+                   'background-color': '#e2e8f0',
+                'margin-bottom': '0'
+              }"
+            ></ngx-skeleton-loader>
+          </div>
+        </div>
+      </div>
+    }
+</section>

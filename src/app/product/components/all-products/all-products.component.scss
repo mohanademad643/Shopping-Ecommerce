@@ -1,0 +1,176 @@
+@use "/src/app/product/scss/productStyle" as main;
+
+.AllProduct_product {
+  > h1 {
+    text-align: center;
+    padding: main.$midumlSize;
+    span {
+      color: main.$primary-color;
+      margin: 0 5px;
+    }
+  }
+  .AllProduct_headprd {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: main.$midumlSize;
+    .all {
+      color: main.$primary-color;
+    }
+    p {
+      margin-left: main.$midumlSize;
+      font-size: main.$midumlSize;
+      line-height: 1;
+      color: white;
+      cursor: pointer;
+      position: relative;
+      background-color: black;
+      border: 1px solid black;
+      padding: main.$smailSize main.$midumlSize;
+      border-radius: 50px;
+      transition: 0.3s ease;
+
+      @media (max-width: 500px) {
+        font-size: 14px;
+      }
+
+      &:hover {
+        color: main.$primary-color;
+        background-color: white;
+      }
+    }
+  }
+  max-width: 100%;
+  padding: main.$midumlSize;
+  .AllProduct_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+    @media (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .AllProduct_pox {
+      .AllProduct_image {
+        .checked-icon{
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 5px main.$smailSize;
+            i{
+              font-size: 15px;
+              background-color: white;
+              border-radius: 50%;
+              padding: main.$smailSize;
+
+            }
+        }
+        @include main.box-style;
+        &:hover::after {
+          top: -2000px;
+        }
+        &::after {
+          @include main.After-style;
+        }
+
+        &:hover {
+          .icon_box {
+            right: 0;
+          }
+
+        }
+        @include main.icon-style;
+      }
+      .AllProduct_content {
+        padding: main.$midumlSize 0px;
+        @include main.btn-Cart-Style;
+        .Quantity-Avilable{
+            p{
+          font-size: 17px;
+          font-weight: 400;
+          span{
+            font-size: 14px;
+            color: #999;
+            margin-left: 5px;
+          }
+        }
+        }
+
+        > p {
+          font-size: 15px;
+          color: rgba(0, 0, 0, 0.8);
+          padding: 15px 0;
+          font-weight: 400;
+          margin: 0;
+          line-height: 1.4;
+          cursor: pointer;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+        h1 {
+          font-size: 25px;
+          margin: 0;
+          font-weight: 500;
+        }
+        .about_price {
+          .rating {
+            i {
+              color: main.$primary-color;
+              margin-left: 3px;
+            }
+          }
+          .AllProduct_price {
+            display: flex;
+            align-items: center;
+
+            p {
+              margin-bottom: 0;
+              font-weight: bold;
+              color: main.$primary-color;
+              font-family: math;
+              font-size: 17px;
+            }
+            span {
+              margin-left: main.$smailSize;
+              color: #ccc;
+              font-family: math;
+              font-size: 17px;
+              text-decoration: line-through;
+            }
+          }
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+    }
+  }
+  .see_more {
+    text-align: center;
+    padding: main.$smailSize main.$midumlSize;
+    color: white;
+    background-color: main.$primary-color;
+    margin: main.$midumlSize auto;
+    width: fit-content;
+
+    cursor: pointer;
+  }
+
+  .see_btn {
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+
+  .see_btn p {
+    margin: 0;
+  }
+
+  .see_btn i {
+    margin: 5px 0 0 main.$smailSize;
+  }
+}

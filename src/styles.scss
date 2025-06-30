@@ -1,0 +1,99 @@
+@import "~animate.css/animate.min.css";
+@import "~@fortawesome/fontawesome-free/css/all.css";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Style the previous and next button */
+swiper-container::part(button-next) {
+  left: 3rem;
+}
+swiper-container::part(button-prev) {
+  left: 0;
+}
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  height: auto !important;
+}
+swiper-container::part(button-prev),
+swiper-container::part(button-next) {
+  font-size: 30px;
+  color: #fff;
+  width: 25px;
+  height: 25px;
+  font-weight: bold;
+  padding: 5px;
+  background-color: #2e8b57;
+  border-radius: 5px;
+  position: absolute;
+  top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+swiper-container::part(pagination-bullet-active) {
+  background-color: #2e8b57 !important;
+  width: 16px;
+  height: 16px;
+  opacity: 1 !important;
+}
+
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  background-color: white !important;
+  padding: 10px 15px;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  background-color: white !important;
+  padding: 10px 15px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #2e8b57;
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: darken(#2e8b57, 10%);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: lighten(#2e8b57, 10%);
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+::ng-deep .mat-mdc-text-field-wrapper .mdc-text-field .ng-tns-c1798928316-6 .mdc-text-field--outlined .mdc-text-field--focused{
+  background-color: #2e8b57!important;
+  border-color: #2e8b57!important;
+
+}

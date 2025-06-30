@@ -1,0 +1,145 @@
+
+<section class="top">
+  <div class="container_top">
+    <div class="top_paragraph">
+      <p>Welcome to my online shop</p>
+    </div>
+    <div class="top_contact">
+      <div class="top_contact_one">
+        <i class="fa-solid fa-phone"></i>
+        <p>+40 4224225535</p>
+      </div>
+      <div class="top_contact_two" [routerLink]="['/enter']" (click)="RemoverFromLocalstorage()">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <p class="sign">sign up</p>
+      </div>
+    </div>
+  </div>
+</section>
+<header class="header_top">
+  <div class="Overlay" id="Overlay" [class.active]="isMenuOpen()"></div>
+  <div class="header_container">
+    <nav class="nav_slider" id="nav_sliders" [class.active]="isMenuOpen()">
+      <div class="sticky-section">
+        <i class="fa-solid fa-xmark" id="closemenu" (click)="isMenuOpen.set(!isMenuOpen())"></i>
+        <div class="image_section">
+          <img src="assets/s-1.jpg" alt="Menu-image" />
+        </div>
+      </div>
+
+      <div class="nav_container">
+
+        <div class="icon_select" routerLink="/Feature">
+          <i class="fa-solid fa-house"></i>
+          <p>home</p>
+        </div>
+        <div class="icon_select" routerLink="/Categories">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <p>shop</p>
+        </div>
+        <div class="icon_select" routerLink="/service">
+          <i class="fas fa-tools"></i>
+          <p>service</p>
+        </div>
+        <div class="icon_select" routerLink="/about">
+          <i class="fas fa-info-circle"></i>
+          <p>About us</p>
+        </div>
+        <div class="icon_select" routerLink="/profile">
+          <i class="fa-regular fa-user"></i>
+          <p>Profile</p>
+        </div>
+        <div class="icon_select" routerLink="/contact">
+          <i class="fa-solid fa-headset"></i>
+          <p>contact us</p>
+        </div>
+
+        <div class="icon_select" [routerLink]="['/enter']" (click)="RemoverFromLocalstorage()">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <p>log out</p>
+        </div>
+      </div>
+    </nav>
+    <div class="logo_section" routerLink="/Feature">
+      <i class="fas fa-couch"></i>
+      <p>Furniture</p>
+    </div>
+    <div class="header_search">
+      <input type="search" name="" id="" placeholder="search here" />
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    <div class="icon_section">
+      <div class="cart_icon">
+        <i class="fa-solid fa-bag-shopping" routerLink="/cart"></i>
+        <span>{{ cartCount() }}</span>
+      </div>
+      <i class="fa-regular fa-user" [hidden]="CheckingToken()" routerLink="/profile"></i>
+      <div class="cart_icon">
+        <i class="fa-regular fa-heart" routerLink="/favorite"></i>
+        <span>{{ favoriteCount() }}</span>
+      </div>
+
+      <i
+        class="fa-solid fa-bars-staggered close"
+        id="menu"
+        (click)="isMenuOpen.set(!isMenuOpen())"
+      ></i>
+    </div>
+  </div>
+  <div class="list_section">
+    <div class="list_section_icon">
+      <i class="fa-solid fa-home"></i>
+      <p routerLink="/Feature">home</p>
+    </div>
+    <div class="list_section_icon" routerLink="/service">
+        <i class="fas fa-tools"></i>
+        <p>service</p>
+    </div>
+    <div class="list_section_icon" routerLink="/about">
+      <i class="fas fa-info-circle"></i>
+      <p>about us</p>
+    </div>
+    <div class="list_section_icon" routerLink="/contact">
+      <i class="fa-solid fa-headset"></i>
+      <p>contact us</p>
+    </div>
+
+    <div class="list_section_icon"  [routerLink]="['/enter']" (click)="RemoverFromLocalstorage()">
+      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+      <p>log out</p>
+    </div>
+  </div>
+</header>
+
+
+<section class="fixed-icons-wrapper" [hidden]="!scrolled()">
+
+  <span class="toggle-button" (click)="toggleIcons()" [class.collapsed]="!showIcons()">
+    <i [class.fa-chevron-left]="showIcons()" [class.fa-chevron-right]="!showIcons()" class="fa-solid"></i>
+  </span>
+
+  <div class="fixed-icons" [class.hide]="!showIcons()">
+    <div class="icon-container" routerLink="/Feature">
+      <i class="fa-solid fa-house"></i>
+      <p>Home</p>
+    </div>
+    <div class="icon-container" routerLink="/Categories">
+      <i class="fa-solid fa-table-cells"></i>
+      <p>Shop</p>
+    </div>
+    <div class="icon-container" (click)="isMenuOpen.set(!isMenuOpen())">
+      <i class="fa-solid fa-cog"></i>
+      <p>Setting</p>
+    </div>
+
+    <div class="cart_icon">
+      <i class="fa-solid fa-bag-shopping" routerLink="/cart"></i>
+      <span>{{ cartCount() }}</span>
+      <p>Cart</p>
+    </div>
+    <div class="icon-container" routerLink="/profile">
+      <i class="fa-regular fa-user"></i>
+      <p>Profile</p>
+    </div>
+  </div>
+</section>

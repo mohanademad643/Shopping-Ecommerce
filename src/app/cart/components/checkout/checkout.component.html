@@ -1,0 +1,438 @@
+<main class="checkout_perant">
+  <div class="checkout_container">
+    <div class="select_payment">
+      <h1 class="wow animate__fadeInUp" data-wow-delay=".1s">Select Payment</h1>
+      <div class="btn-order">
+        <button
+          class="Delivery wow animate__bounceIn"
+          data-wow-delay=".1s"
+          (click)="waysdeliverd.set(true)"
+          [ngClass]="{ 'button-selected': !waysdeliverd() }"
+        >
+          On Delivery
+        </button>
+        <button
+          class="online wow animate__bounceIn"
+          data-wow-delay=".2s"
+          (click)="waysdeliverd.set(false)"
+          [ngClass]="{ 'button-selected': waysdeliverd() }"
+        >
+          online
+        </button>
+      </div>
+      <div class="online_fileds" [hidden]="waysdeliverd()">
+        <div class="online_image_section">
+          <img
+            src="assets/MasterCard.jpg"
+            class="wow animate__zoomIn"
+            data-wow-delay=".1s"
+            alt="MasterCard-image"
+          />
+          <img
+            src="assets/visa.jpg"
+            class="wow animate__zoomIn"
+            data-wow-delay=".2s"
+            alt="Visa-image"
+            (click)="VisaSection()"
+          />
+        </div>
+        <div
+          class="visa_section wow animate__fadeIn"
+          data-wow-delay=".3s"
+          [hidden]="condition()"
+        >
+          <div class="warning_section">
+            <span><i class="fa-solid fa-circle-exclamation"></i></span>
+            <p>This Will Increase The Total Price</p>
+            <span>+10</span>
+          </div>
+          <mat-card>
+            <mat-card-content>
+              <form name="loginForm" [formGroup]="visaForm">
+                <div
+                  class="Name-input wow animate__fadeInLeft"
+                  data-wow-delay=".1s"
+                >
+                  <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Card Name</mat-label>
+                    <input
+                      formControlName="Name"
+                      matInput
+                      placeholder="Enter Your Card Name "
+                      required
+                    />
+
+                    <mat-icon matSuffix> credit_card </mat-icon>
+
+                    <mat-error
+                      *ngIf="visaForm.controls['Name']?.errors?.['required'] "
+                    >
+                      Card Name is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div
+                  class="Car-Number-input wow animate__fadeInLeft"
+                  data-wow-delay=".2s"
+                >
+                  <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Card Number</mat-label>
+                    <input
+                      formControlName="number"
+                      matInput
+                      placeholder="Enter Card Number "
+                      required
+                    />
+
+                    <mat-icon matSuffix> numbers </mat-icon>
+
+                    <mat-error
+                      *ngIf="visaForm.controls['number']?.errors?.['required'] "
+                    >
+                      Card Number is required
+                    </mat-error>
+                    <mat-error
+                      *ngIf="visaForm.controls['number']?.errors?.['pattern'] "
+                    >
+                      Invalid Card Number
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div
+                  class="Full-Info d-flex flex-wrap justify-content-center gap-2"
+                >
+                  <div
+                    class="Date-input flex-fill wow animate__fadeInLeft"
+                    data-wow-delay=".3s"
+                  >
+                    <mat-form-field class="full-width" appearance="outline">
+                      <mat-label>Expiry Date</mat-label>
+                      <input
+                        formControlName="date"
+                        matInput
+                        placeholder="Enter Expiry Date "
+                        required
+                      />
+
+                      <mat-icon matSuffix> calendar_today </mat-icon>
+
+                      <mat-error
+                        *ngIf="visaForm.controls['date']?.errors?.['required']"
+                      >
+                        Expiry Date is required
+                      </mat-error>
+                      <mat-error
+                        *ngIf="visaForm.controls['date']?.errors?.['pattern'] "
+                      >
+                        Invalid expiry date format (MM/YY)
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div
+                    class="CVV-input flex-fill wow animate__fadeInUp"
+                    data-wow-delay=".4s"
+                  >
+                    <mat-form-field class="full-width" appearance="outline">
+                      <mat-label> CVV</mat-label>
+                      <input
+                        formControlName="cvv"
+                        matInput
+                        placeholder="Enter CVV  "
+                        required
+                      />
+
+                      <mat-icon matSuffix> lock </mat-icon>
+
+                      <mat-error
+                        *ngIf="visaForm.controls['cvv']?.errors?.['required'] "
+                      >
+                        CVV is required
+                      </mat-error>
+                      <mat-error
+                        *ngIf="visaForm.controls['cvv']?.errors?.['pattern'] "
+                      >
+                        Invalid CVV
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+
+                <button
+                  mat-flat-button
+                  color="Login mt-2 w-100"
+                  (click)="VisaCheckoutOrder()"
+                  data-wow-delay=".5s"
+                >
+                  Next
+                </button>
+              </form>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+      <div class="onDrive" [hidden]="!waysdeliverd()">
+        <div class="Drive_image wow animate__zoomIn" data-wow-delay=".1s">
+          <img src="assets/delevery.png" alt="image" />
+        </div>
+        <p class="wow animate__bounceIn" data-wow-delay=".2s">
+          You Will Pay Your Money When You Receive Orders
+        </p>
+        <mat-card>
+          <mat-card-content>
+            <form name="loginForm" [formGroup]="deliveryForm">
+              <div
+                class="Full-Name-input wow animate__fadeInLeft"
+                data-wow-delay=".1s"
+              >
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Full Name</mat-label>
+                  <input
+                    formControlName="fullName"
+                    matInput
+                    placeholder="Enter Your Full Name "
+                    required
+                  />
+
+                  <mat-icon matSuffix> person </mat-icon>
+
+                  <mat-error
+                    *ngIf="deliveryForm.controls['fullName']?.errors?.['required'] "
+                  >
+                    Full Name is required
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div
+                class="address-input wow animate__fadeInLeft"
+                data-wow-delay=".2s"
+              >
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Address </mat-label>
+                  <input
+                    formControlName="address"
+                    matInput
+                    placeholder="Enter Address  "
+                    required
+                  />
+
+                  <mat-icon matSuffix> location_on </mat-icon>
+
+                  <mat-error
+                    *ngIf="deliveryForm.controls['address']?.errors?.['required']"
+                  >
+                    Address is required
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div
+                class="City-Input flex-fill wow animate__fadeInLeft"
+                data-wow-delay=".3s"
+              >
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>City </mat-label>
+                  <input
+                    formControlName="city"
+                    matInput
+                    placeholder="Enter Your City  "
+                    required
+                  />
+
+                  <mat-icon matSuffix> location_city </mat-icon>
+
+                  <mat-error
+                    *ngIf="deliveryForm.controls['city']?.errors?.['required']"
+                  >
+                    City is required
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div
+                class="postal-Code-input flex-fill wow animate__fadeInLeft"
+                data-wow-delay=".4s"
+              >
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label> Postal Code</mat-label>
+                  <input
+                    formControlName="postalCode"
+                    matInput
+                    placeholder="Enter Your Postal Code  "
+                    required
+                  />
+
+                  <mat-icon matSuffix> markunread_mailbox </mat-icon>
+
+                  <mat-error
+                    *ngIf="deliveryForm.controls['postalCode']?.errors?.['required'] "
+                  >
+                    postal Code is required
+                  </mat-error>
+                  <mat-error
+                    *ngIf="deliveryForm.controls['postalCode']?.errors?.['pattern']"
+                  >
+                    Invalid Postal Code
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div
+                class="phoneNumber-input flex-fill wow animate__fadeInLeft"
+                data-wow-delay=".5s"
+              >
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label> phone Number </mat-label>
+                  <input
+                    formControlName="phoneNumber"
+                    matInput
+                    placeholder="Enter Your phone Number "
+                    required
+                  />
+
+                  <mat-icon matSuffix> phone </mat-icon>
+
+                  <mat-error
+                    *ngIf="deliveryForm.controls['phoneNumber']?.errors?.['required'] "
+                  >
+                    phone Number is required
+                  </mat-error>
+                  <mat-error
+                    *ngIf="deliveryForm.controls['phoneNumber']?.errors?.['pattern']"
+                  >
+                    Invalid phone Number
+                  </mat-error>
+                </mat-form-field>
+              </div>
+
+              <button
+                mat-flat-button
+                (click)="DeleviryCheckout()"
+                color="Login mt-2 w-100 wow animate__bounceIn"
+                data-wow-delay=".6s"
+              >
+                Next
+              </button>
+            </form>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="order-summary">
+        <div class="section wow animate__fadeInUp" data-wow-delay=".1s">
+          <h2 class="total">Total</h2>
+          <p class="total">${{ Totalprice() }}</p>
+        </div>
+
+        <div class="section wow animate__fadeInUp" data-wow-delay=".2s">
+          <h2>Order Items</h2>
+          <p>04</p>
+        </div>
+
+        <div class="section wow animate__fadeInUp" data-wow-delay=".3s">
+          <h2>Total Quantity</h2>
+          <p>53</p>
+        </div>
+
+        <div class="section wow animate__fadeInUp" data-wow-delay=".4s">
+          <h2>Items Cost</h2>
+          <p class="amount">${{ Totalprice() + 5 }}</p>
+        </div>
+
+        <div class="section wow animate__fadeInUp" data-wow-delay=".5s">
+          <h2>Estimated Delivery</h2>
+          <p>5 days</p>
+        </div>
+
+        <div class="section wow animate__fadeInUp" data-wow-delay=".6s">
+          <h2>Shipping Cost</h2>
+          <p class="amount">+$5.00</p>
+        </div>
+
+        <div class="section wow animate__fadeInUp" data-wow-delay=".7s">
+          <h2>Delivery Type</h2>
+          <p class="amount">+$0.00</p>
+        </div>
+
+        <div class="section wow animate__fadeInUp" data-wow-delay=".8s">
+          <h2>Coupon Code</h2>
+          <p class="discount">-10%</p>
+        </div>
+
+        <div class="section wow animate__fadeInUp" data-wow-delay=".9s">
+          <h2>Payment Method</h2>
+          <p>Credit Card</p>
+        </div>
+      </div>
+    </div>
+    <div class="order-items">
+      <h1 class="wow animate__fadeInUp" data-wow-delay=".1s">Order Items</h1>
+      <section class="wow animate__fadeInUp" data-wow-delay=".2s">
+        @if(!endResponse()){
+          <app-checkout-skeleton></app-checkout-skeleton>
+         }@else{ 
+          @for (product of CartData(); track
+        product.id; let i = $index) {
+        <div class="item">
+          <div class="item-details">
+            <div class="item-image">
+              <img [src]="product.image" alt="{{ product.title }}" />
+            </div>
+            <div class="item-info">
+              <h3>{{ product.title }}</h3>
+              <div class="price-and-quantity">
+                <p>Price: ${{ product.newPrice | number : "1.2-2" }}</p>
+                <p class="total">
+                  Total: ${{
+                    product.newPrice * product.quantity | number : "1.2-2"
+                  }}
+                </p>
+              </div>
+              <p>Quantity: {{ product.quantity }}</p>
+            </div>
+          </div>
+        </div>
+
+        } }
+      </section>
+
+      <div class="location-card">
+        <div class="edit_section wow animate__fadeInUp" data-wow-delay=".1s">
+          <h1>Delivery To</h1>
+          <p>Edit</p>
+        </div>
+        <div class="address-section wow animate__fadeInUp" data-wow-delay=".1s">
+          <h3>Home Address</h3>
+          <div class="area_section">
+            <p>
+              Area 1, Street, City, Government Area 1, Street, City, Gover...
+            </p>
+          </div>
+        </div>
+
+        <div class="address-section" data-wow-delay=".2s">
+          <h3>Work Address</h3>
+          <div class="area_section">
+            <p>
+              Area 1, Street, City, Government Area 1, Street, City, Gover...
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="choose_offfer">
+        <h1 class="wow animate__fadeInUp" data-wow-delay=".1s">
+          Delivery Option
+        </h1>
+        <div class="offer_section">
+          <div class="offer_box wow animate__fadeInLeft" data-wow-delay=".1s">
+            <img src="assets/free_option.jpg" alt="image" />
+            <p>Normal</p>
+            <input type="radio" name="checked" />
+          </div>
+          <div class="offer_box wow animate__fadeInRight" data-wow-delay=".2s">
+            <img src="assets/fast_delivery.png" alt="image" />
+            <p>Express</p>
+            <input type="radio" name="checked" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<app-newsletter></app-newsletter>

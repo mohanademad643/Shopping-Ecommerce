@@ -1,0 +1,379 @@
+<main class="product-details">
+
+    @if (Endresponse()) {
+      <section class="product-detail-container">
+    <div class="img-details">
+      <div class="big-image">
+        <img [src]="selectedImage()" alt="{{ productDetails().title }}" class="wow animate__zoomIn"
+          data-wow-delay=".1s" />
+      </div>
+      <div class="small-images">
+        <img src="{{productDetails().image}}" alt="Small Image 1" (click)="changeImage(productDetails().image)"
+          class="wow animate__zoomIn" data-wow-delay=".2s" />
+        <img src="assets/details-1.jpg" alt="Small Image 2" (click)="changeImage('assets/details-1.jpg')"
+          class="wow animate__zoomIn" data-wow-delay=".3s" />
+        <img src="assets/details-2.jpg" alt="Small Image 3" (click)="changeImage('assets/details-2.jpg')"
+          class="wow animate__zoomIn" data-wow-delay=".4s" />
+        <img src="assets/details-3.jpg" alt="Small Image 4" (click)="changeImage('assets/details-3.jpg')"
+          class="wow animate__zoomIn" data-wow-delay=".5s" />
+      </div>
+    </div>
+
+    <div class="product-info">
+      <h2 class=" wow animate__zoomIn" data-wow-delay=".2s">{{ productDetails().title }}</h2>
+
+      <div class="ratings  wow animate__zoomIn" data-wow-delay=".3s">
+        <!-- Add star ratings or other rating indicators here -->
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9734;</span>
+        <span class="reviews">(100 Reviews)</span>
+      </div>
+      <p class="price  wow animate__zoomIn" data-wow-delay=".4s">
+        <span class="new-price">${{ productDetails().newPrice }}</span>
+
+        <span class="old-price">${{ productDetails().oldPrice }}</span>
+      </p>
+      <div class="decription_section wow animate__zoomIn" data-wow-delay=".5s">
+        <div class="information">
+          <div class="info_icon">
+            <i class="fa-solid fa-ruler-horizontal"></i>
+          </div>
+          <p>50x50 <span>cm</span></p>
+        </div>
+        <div class="information">
+          <div class="info_icon">
+            <i class="fa-solid fa-dolly"></i>
+          </div>
+          <p>50 <span>kg</span></p>
+        </div>
+        <div class="information">
+          <div class="info_icon">
+            <i class="fa-solid fa-chair"></i>
+          </div>
+          <p>Chair</p>
+        </div>
+        <div class="information">
+          <div class="info_icon">
+            <i class="fa-solid fa-rotate"></i>
+          </div>
+          <p>Ikea</p>
+        </div>
+        <div class="information">
+          <div class="info_icon">
+            <i class="fa-solid fa-cubes-stacked"></i>
+          </div>
+          <p>Wood</p>
+        </div>
+      </div>
+
+      <div class="decription_Details  wow animate__zoomIn" data-wow-delay=".6s">
+        <h1>Description:</h1>
+        <p>{{productDetails().description}}</p>
+      </div>
+      <div class="Shipping_Information  wow animate__zoomIn" data-wow-delay=".7s">
+        <h1>Shipping Information:</h1>
+        <div class="shipping_group">
+          <div class="shipping_info">
+            <i class="fa-regular fa-clock"></i>
+            <div class="shipping_detail">
+              <p>Delivery Time:<span class="clock"> 20h</span></p>
+            </div>
+          </div>
+          <div class="shipping_info">
+            <i class="fa-solid fa-percent"></i>
+            <div class="shipping_detail">
+              <p>Discount: <span class="percent"> -10%</span></p>
+            </div>
+          </div>
+          <div class="shipping_info">
+            <i class="fa-regular fa-heart"></i>
+            <div class="shipping_detail">
+              <p>Favourites:<span class="heart"> 50 Customers</span></p>
+            </div>
+          </div>
+          <div class="shipping_info">
+            <i class="fa-solid fa-dollar-sign"></i>
+            <div class="shipping_detail">
+              <p>Payment Method:<span class="dollar-sign"> Online</span></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- Add to Cart and Buy Now buttons -->
+      <div class="add-buttons">
+        <div class="btn-section wow animate__bounceIn" data-wow-delay=".8s" (click)="addToCart(productDetails())">
+          <i class="fa-solid fa-cart-plus"></i>
+          <button>Buy Now</button>
+        </div>
+
+        <div class="favorite wow animate__bounceIn" data-wow-delay=".9s"
+          (click)="postproductTofavorite(productDetails())">
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <div class="favorite wow animate__bounceIn" data-wow-delay="1s">
+          <i class="fa-solid fa-share-nodes"></i>
+        </div>
+      </div>
+    </div>
+   </section>
+    }@else {
+    <app-details-skeleton></app-details-skeleton>
+    }
+
+
+
+  <section class="acme-furniture">
+    <h1 class="wow animate__zoomIn" data-wow-delay=".1s">Specifications</h1>
+    <div class="acme-group">
+      <div class="acme-section wow animate__fadeInLeft" data-wow-delay=".1s">
+        <div class="acme-info">
+          <p>Brand</p>
+          <span>Acme Furniture</span>
+        </div>
+        <div class="acme-info">
+          <p>Color</p>
+          <span>Espresso</span>
+        </div>
+        <div class="acme-info">
+          <p>Dimensions</p>
+          <span>W: 40", H: 30", D: 20"</span>
+        </div>
+        <div class="acme-info">
+          <p>Brand</p>
+          <span>Acme Furniture</span>
+        </div>
+        <div class="acme-info">
+          <p>Brand</p>
+          <span>Acme Furniture</span>
+        </div>
+        <div class="acme-info">
+          <p>Color</p>
+          <span>Espresso</span>
+        </div>
+        <div class="acme-info">
+          <p>Dimensions</p>
+          <span>W: 40", H: 30", D: 20"</span>
+        </div>
+        <div class="acme-info">
+          <p>Brand</p>
+          <span>Acme Furniture</span>
+        </div>
+
+      </div>
+      <div class="acme-section wow animate__fadeInRight" data-wow-delay=".1s">
+        <div class="acme-info">
+          <p>Brand</p>
+          <span>Acme Furniture</span>
+        </div>
+        <div class="acme-info">
+          <p>Color</p>
+          <span>Espresso</span>
+        </div>
+        <div class="acme-info">
+          <p>Dimensions</p>
+          <span>W: 40", H: 30", D: 20"</span>
+        </div>
+        <div class="acme-info">
+          <p>Brand</p>
+          <span>Acme Furniture</span>
+        </div>
+        <div class="acme-info">
+          <p>Brand</p>
+          <span>Acme Furniture</span>
+        </div>
+        <div class="acme-info">
+          <p>Color</p>
+          <span>Espresso</span>
+        </div>
+        <div class="acme-info">
+          <p>Dimensions</p>
+          <span>W: 40", H: 30", D: 20"</span>
+        </div>
+        <div class="acme-info">
+          <p>Brand</p>
+          <span>Acme Furniture</span>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+  <section class="reviews-ferniture">
+    <h1 class=" wow animate__bounceIn" data-wow-delay="1.s">Reviews</h1>
+    <div class="reviews_container">
+      <div class="Overall_section wow animate__zoomIn" data-wow-delay=".1s">
+        <h1>Overall</h1>
+        <div class="rating_overall">
+          <div class="about-rating">
+            <div class="rating-section">
+              <h1>4.5</h1>
+              <div class="rating-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p>220 customers</p>
+            </div>
+            <div class="filed_rating">
+              <div class="rating_count">
+                <p>1</p>
+                <div class="blog">
+                  <span style="width: 90%" data-progress="90%"></span>
+                </div>
+              </div>
+              <div class="rating_count">
+                <p>2</p>
+                <div class="blog">
+                  <span style="width: 80%" data-progress="80%"></span>
+                </div>
+
+              </div>
+              <div class="rating_count">
+                <p>3</p>
+                <div class="blog">
+                  <span style="width: 70%" data-progress="70%"></span>
+                </div>
+
+              </div>
+              <div class="rating_count">
+                <p>4</p>
+                <div class="blog">
+                  <span style="width: 60%" data-progress="60%"></span>
+                </div>
+
+              </div>
+              <div class="rating_count">
+                <p>5</p>
+                <div class="blog">
+                  <span style="width: 50%" data-progress="50%"></span>
+                </div>
+
+              </div>
+
+
+            </div>
+          </div>
+          <div class="rating_information">
+            <div class="rate_box">
+              <p>Delivery:</p>
+              <div class="rate_stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <p>(56)</p>
+              </div>
+            </div>
+            <div class="rate_box">
+              <p>Customer Service:</p>
+              <div class="rate_stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <p>(65)</p>
+              </div>
+            </div>
+            <div class="rate_box">
+              <p>Design:</p>
+              <div class="rate_stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <p>(21)</p>
+              </div>
+            </div>
+            <div class="rate_box">
+              <p>Size & Fit:</p>
+              <div class="rate_stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <p>(34)</p>
+              </div>
+            </div>
+            <div class="rate_box">
+              <p>Comfort:</p>
+              <div class="rate_stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <p>(32)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="customer_reviews">
+        <div class="cust-rating">
+          <h1 class="wow animate__bounceIn" data-wow-delay=".1s">Rating</h1>
+          <p class="wow animate__bounceIn" data-wow-delay=".2s">Showing<span>45</span>of<span>50</span></p>
+        </div>
+        <div class="cust-rev-perant wow animate__fadeInRight" data-wow-delay=".2s">
+          <div class="cust-rev">
+            <div class="cust-image">
+              <img src="assets/c-2.jpg" alt="Reviews-image">
+            </div>
+            <div class="cust-info">
+              <h2>John Doe</h2>
+              <div class="cust-star">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p>Sun Oct 01 2023</p>
+            </div>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.
+          </p>
+        </div>
+        <div class="cust-rev-perant wow animate__fadeInRight" data-wow-delay=".3s">
+          <div class="cust-rev">
+            <div class="cust-image">
+              <img src="assets/c-1.jpg" alt="Reviews-image">
+            </div>
+            <div class="cust-info">
+              <h2>John Doe</h2>
+              <div class="cust-star">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p>Sun Oct 01 2023</p>
+            </div>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.
+          </p>
+        </div>
+
+        <button class="wow animate__bounceIn" data-wow-delay=".4s">More</button>
+
+
+      </div>
+    </div>
+  </section>
+
+</main>

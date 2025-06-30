@@ -1,0 +1,40 @@
+<div class="testimonial py-5">
+  <div class="container wow fadeInUp" data-wow-delay=".2s">
+    <ng-content></ng-content>
+    <swiper-container class="mySwiper" [slidesPerView]="slidesPerView()" [spaceBetween]="10" [loop]="true"
+  [autoplay]="{ delay: 3000, disableOnInteraction: false }" [pagination]="{ clickable: true }" [navigation]="true">
+      @for (testimonial of testimonials; track testimonial.id) {
+
+      <swiper-slide>
+        <div class="testimonial-item text-center">
+          <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" [src]="testimonial.image"
+            style="width: 100px; height: 100px" alt="Testimonial Image" />
+          <div class="testimonial-text rounded text-center p-4">
+            <div class="card-body">
+              <h5 class="mb-1">{{ testimonial.title }}</h5>
+              <div class="customer_stars mb-3">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </div>
+              <p>{{ testimonial.description }}</p>
+
+            </div>
+          </div>
+          <div class="mesage-icon">
+            <i class="fas fa-quote-left"></i>
+          </div>
+        </div>
+      </swiper-slide>
+      }
+
+      <div class="swiper-pagination"></div>
+    </swiper-container>
+    <div class="arrows">
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</div>

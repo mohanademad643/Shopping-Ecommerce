@@ -1,0 +1,120 @@
+<app-header-section class=" wow fadeInUp" data-wow-delay="0.1s">
+  <div class="about-us-image" about-image>
+    <img src="assets/cart.jpg" height="400px" width="100%" alt="Cart_Image">
+  </div>
+  <div about-title>Cart</div>
+  <ng-container about-breadcrumb><a about-link routerLink="/Feature" class="text-light text-decoration-none">Home</a>
+    /Cart</ng-container>
+</app-header-section>
+<main class="all_cart">
+  <div class="all_container">
+    @if(!endResponse() ){
+
+    <app-cart-skeleton></app-cart-skeleton>
+    }@else {
+    <section class="empty_fevorite"
+      [ngClass]="{'Emptyfavorite': getlenght() <= 0, 'EmptyfavoriteDeleted': getlenght() > 0}">
+      <picture class="image wow animate__zoomIn" data-wow-delay=".1s">
+        <img src="assets/empty.webp" alt="empity_image">
+      </picture>
+      <p>No Favourites Products</p>
+      <span routerLink="/Feature">Continue Shopping</span>
+
+    </section>
+    <section class="table_cart wow animate__zoomIn" data-wow-delay=".1s" [ngClass]="{'deleteTable': getlenght() <=0}">
+
+      <table mat-table [dataSource]="dataSource" class="cart-table">
+
+        <!-- Image Column -->
+        <ng-container matColumnDef="image">
+          <th mat-header-cell *matHeaderCellDef> Image </th>
+          <td mat-cell *matCellDef="let product">
+            <img [src]="product.image" alt="{{ product.title }}" />
+          </td>
+        </ng-container>
+
+        <!-- Title Column -->
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef> Title </th>
+          <td mat-cell class="text-secondary" *matCellDef="let product"> {{ product.title }} </td>
+        </ng-container>
+
+        <!-- Price Column -->
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef> Price </th>
+          <td mat-cell *matCellDef="let product">
+            <p class="price"> ${{ product.newPrice }}</p>
+          </td>
+        </ng-container>
+
+        <!-- Quantity Column -->
+        <ng-container matColumnDef="quantity">
+          <th mat-header-cell *matHeaderCellDef> Quantity </th>
+          <td mat-cell *matCellDef="let product">
+            <div class="counter d-flex justify-content-between align-items-center">
+              <p (click)="increaseValue(product)" class="btn btn-sm btn-success"><i class="fa-solid fa-plus"></i></p>
+              <p class="InputValue p-2 text-secondary">{{ product.quantity }}</p>
+              <p (click)="decreaseValue(product)" class="btn btn-sm btn-danger"><i class="fa-solid fa-minus"></i></p>
+            </div>
+          </td>
+        </ng-container>
+
+        <!-- Option Column -->
+        <ng-container matColumnDef="option">
+          <th mat-header-cell *matHeaderCellDef> Option </th>
+          <td mat-cell *matCellDef="let product">
+            <i class="fa-solid fa-trash-can text-danger fs-5" (click)="DeleteItem(product)"></i>
+          </td>
+        </ng-container>
+
+        <!-- Table Rows -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of cart items">
+      </mat-paginator>
+
+
+
+
+    </section>
+    <section class="checkout_section wow fadeInUp" data-wow-delay=".2s">
+      <p>Enter Coupon:</p>
+      <div class="cupone_input">
+        <div class="input-btn">
+          <p> <i class="fas fa-tags"></i></p>
+          <input type="text" placeholder="Enter Promocode">
+        </div>
+        <button>submit</button>
+      </div>
+      <!-- checkout.component.html -->
+
+      <div class="checkout-section">
+        <div class="checkout-item">
+          <span>Items</span>
+          <span>0{{getlenght()}}</span>
+        </div>
+        <div class="checkout-item">
+          <span>Shipping</span>
+          <span>+$10</span>
+        </div>
+        <div class="checkout-item">
+          <span>Promocode</span>
+          <span>-10%</span>
+        </div>
+        <div class="checkout-item total">
+          <span>Total</span>
+          <span>${{ Totalprice() }}</span>
+        </div>
+        <button [hidden]="getlenght() > 0" class="checkout-button">Checkout</button>
+        <button [hidden]="getlenght() == 0" class="checkout-button" routerLink="/checkout"
+          routerLinkActive="router-link-active">Checkout</button>
+        <button class="continue-shopping-button" routerLink="/Feature">Continue Shopping</button>
+      </div>
+
+    </section>
+    }
+  </div>
+</main>
+<app-newsletter></app-newsletter>

@@ -1,0 +1,81 @@
+<main class="trend_product">
+  <h1>TRENDING</h1>
+  @if(!endResponse()){
+    <div class="container-fluid py-4 justify-content-center">
+      <app-skeleton-card></app-skeleton-card>
+
+        </div>
+  }@else {
+  <section class="trend_headprd">
+    <p (click)="GetAlltrendingPrd()" class="all wow animate__bounceIn" data-wow-delay=".1s">All</p>
+    <p (click)="filterTrendPrd('Designer')" class=" wow animate__bounceIn" data-wow-delay=".2s">Top Products</p>
+    <p (click)="filterTrendPrd('Carpenter')" class=" wow animate__bounceIn" data-wow-delay=".3s">Pest sellers</p>
+    <p (click)="filterTrendPrd('Manufacturer')" class=" wow animate__bounceIn" data-wow-delay=".4s">New Arrival</p>
+
+  </section>
+  <section class="ternd_container">
+    @for (product of vListAllPrd(); track product.id ; let i = $index) {
+    <div class="ternd_pox wow fadeInUp" [attr.data-wow-delay]="(i * 0.05) + 's'"
+      [ngStyle]="{'opacity': product.quantityAvailable ==0 ? '0.2':'1','pointer-events':product.quantityAvailable ==0 ? 'none':''}">
+      <div class="ternd_image ">
+        <div class="checked-icon d-flex align-items-center gap-2">
+          <i class="fa-solid fa-wallet text-success" [hidden]="!checkIfProductInCart(product.id) "></i>
+          <i class="fa-solid fa-heart text-danger" [hidden]="!checkIfProductInFavorite(product.id) "></i>
+
+        </div>
+
+        <img src="{{product.image}}" alt="Trend Image">
+        <div class="icon_box">
+          <i class="fa-solid fa-heart" (click)="postproductTofavorite(product)"
+            [ngStyle]="{'color': checkIfProductInFavorite(product.id) ? 'red' : '#777'}"></i>
+          <i class="fa-solid fa-wallet" (click)="addToCart(product)"
+            [ngStyle]="{'color':  checkIfProductInCart(product.id) ? 'green' : '#777'}"></i>
+          <i class="fa-regular fa-share-from-square"></i>
+          <i class="fa-solid fa-eye" [routerLink]="['/product/'+ product.id]"></i>
+        </div>
+      </div>
+      <div class="ternd_content">
+        <h1>{{product.title}}</h1>
+        <p [routerLink]="['/product/'+ product.id]">{{ product.description }}</p>
+        <div class="Quantity-Avilable">
+          <p>Quantity Available: {{product.quantityAvailable}} <span>(Items)</span> </p>
+        </div>
+        <div class="about_price">
+
+          <div class="ternd_price">
+            <p>{{ product.newPrice | currency:'USD':'symbol':'1.2-2' }}</p>
+            <span>{{ product.oldPrice | currency:'USD':'symbol':'1.2-2' }}</span>
+          </div>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+
+          </div>
+        </div>
+        <div class="btn" [hidden]="product.quantityAvailable ==0">
+          <ng-container *ngIf="!checkIfProductInCart(product.id)">
+            <button type="submit" (click)="addToCart(product)">
+              <i class="fa fa-cart-plus"></i>
+              <p>Add To Cart</p>
+            </button>
+          </ng-container>
+          <ng-container *ngIf="checkIfProductInCart(product.id)">
+            <button type="submit" (click)="addToCart(product)" class="btn-added">
+              <i class="fa fa-check"></i>
+              <p>Added To Cart</p>
+            </button>
+          </ng-container>
+
+        </div>
+      </div>
+    </div>
+    }
+
+
+  </section>
+  }
+
+</main>

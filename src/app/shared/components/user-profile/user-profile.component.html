@@ -1,0 +1,151 @@
+<main class="user_profile">
+  <div class="All-User-design">
+    <div class="user_container">
+      <div class="user_list">
+        <div class="user_icon active wow animate__fadeInLeft" data-wow-delay=".1s">
+          <i class="fa-regular fa-user"></i>
+          <p>Profile</p>
+        </div>
+        <div class="user_icon wow animate__fadeInLeft" data-wow-delay=".2s" >
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+          <p>Setting</p>
+        </div>
+        <div class="user_icon wow animate__fadeInLeft" data-wow-delay=".3s">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <p>Adresses</p>
+        </div>
+        <div class="user_icon wow animate__fadeInLeft" data-wow-delay=".4s">
+          <i class="fa-solid fa-lock"></i>
+          <p>Change Password</p>
+        </div>
+      </div>
+      <div class="user_defenition">
+        <div class="image_profile">
+          <img src="assets/categories.jpg" class="wow animate__zoomIn" data-wow-delay=".1s" alt="User_image_Perant" />
+          <img src="assets/categories_samll.jpg" data-wow-delay=".2s" alt="User_image_child" class="child_image wow animate__zoomIn" />
+        </div>
+        <div class="user_name">
+          <h1 class="wow animate__bounceIn" data-wow-delay=".1s">{{ userData().Fname }} {{ userData().Lname }}</h1>
+          <div class="user_information">
+            <div class="user_name_icon wow fadeIn" data-wow-delay=".1s">
+              <i class="fa-regular fa-envelope"></i>
+                 <p>{{ userData().email }}</p>
+            </div>
+            <div class="user_name_icon wow fadeIn" data-wow-delay=".2s">
+              <i class="fa-solid fa-phone"></i>
+             <p>{{ userData().phoneNumber }}</p>
+            </div>
+            <div class="user_name_icon wow fadeIn" data-wow-delay=".3s">
+              <mat-icon
+              [class.male-icon]="userData().Gender === 'Male'"
+               [class.female-icon]="userData().Gender === 'Female'"
+                 >{{ userData().Gender === 'Male' ? 'male' : 'female' }}</mat-icon>
+                <p>{{ userData().Gender }}</p>
+            </div>
+            <div class="user_name_icon wow fadeIn" data-wow-delay=".4s">
+              <i class="fa-solid fa-location-dot"></i>
+              <p>Egypt</p>
+            </div>
+          </div>
+        </div>
+        <div class="user_order_section">
+          <div class="oreder_box wow animate__fadeInUp" data-wow-delay=".1s">
+            <p>Adress</p>
+            <div class="order_box_child">
+              <i class="fa-solid fa-map-location-dot"></i>
+              <h2>Home</h2>
+              <p>1234 Main St,City,State 90210</p>
+            </div>
+          </div>
+          <div class="oreder_box wow animate__fadeInUp" data-wow-delay=".2s">
+            <p>Payment</p>
+            <div class="order_box_child">
+              <i class="fa-regular fa-credit-card"></i>
+              <h2>Credit Card</h2>
+              <p>Number:*********533</p>
+            </div>
+          </div>
+          <div class="oreder_box wow animate__fadeInUp" data-wow-delay=".3s">
+            <p>Delivary</p>
+            <div class="order_box_child">
+              <i class="fa-solid fa-car"></i>
+              <h2>Normal Delivary</h2>
+              <p>the Type of Delivary</p>
+            </div>
+          </div>
+        </div>
+        <div class="user_history">
+          <p class="wow animate__bounceIn" data-wow-delay=".1s">history</p>
+          <div class="history_box wow animate__fadeInUp" data-wow-delay=".1s">
+            <div class="history_child">
+              <div class="history_icon">
+                <i class="fa-solid fa-cart-arrow-down"></i>
+              </div>
+              <div class="history_content">
+                <p>Add</p>
+                <h1>Chir Of Divilings 4Legs</h1>
+                <span>You Add A Product To Cart</span>
+              </div>
+            </div>
+            <div class="history_show">
+              <p>01,jone 10:00AM</p>
+              <i class="fa-solid fa-cart-arrow-down"></i>
+            </div>
+          </div>
+          <div class="history_box wow animate__fadeInUp" data-wow-delay=".2s">
+            <div class="history_child">
+              <div class="history_icon Favorite">
+                <i class="fa-solid fa-heart"></i>
+              </div>
+              <div class="history_content">
+                <p class="Favorite">Favorite</p>
+                <h1>Chir Of Divilings 4Legs</h1>
+                <span>You Add A Product To Cart</span>
+              </div>
+            </div>
+            <div class="history_show">
+              <p>01,jone 10:00AM</p>
+              <i class="fa-solid fa-heart Favorite"></i>
+            </div>
+          </div>
+          <div class="history_box wow animate__fadeInUp" data-wow-delay=".3s">
+            <div class="history_child">
+              <div class="history_icon Deleted">
+                <i class="fa-solid fa-cube"></i>
+              </div>
+              <div class="history_content">
+                <p class="Deleted">Deleted</p>
+                <h1>Chir Of Divilings 4Legs</h1>
+                <span>You Add A Product To Cart</span>
+              </div>
+            </div>
+            <div class="history_show">
+              <p>01,jone 10:00AM</p>
+              <i class="fa-solid fa-cube Deleted"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="user_activity">
+        <div class="activity_container">
+          <div class="activity_box_1 wow animate__fadeInUp" data-wow-delay=".1s">
+            <h2>Your Order</h2>
+            <p>Visit your order and more activity</p>
+            <button>Orders</button>
+          </div>
+          <div class="activity_box wow animate__fadeInUp" data-wow-delay=".2s">
+            <h2>Most Categories</h2>
+            <p>The Moste 5 Categories You Ordered</p>
+            <img src="assets/chart-1.png" alt="Chart_image">
+          </div>
+          <div class="activity_box wow animate__fadeInUp" data-wow-delay=".3s">
+            <h2>Total Activites</h2>
+            <img src="assets/chart-2.png" alt="Chart_image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+<app-newsletter></app-newsletter>

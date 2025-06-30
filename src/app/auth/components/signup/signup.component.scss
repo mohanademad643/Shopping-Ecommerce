@@ -1,0 +1,52 @@
+@use "../../scss/ComponentsStyle" as main;
+.logup-page {
+  width: 750px;
+  @media (max-width:767px) {
+    width: 600px;
+  }
+
+  @media (max-width:main.$max-width) {
+    width: main.$medium-width;
+  }
+
+  mat-card {
+    @include main.MatCard-style;
+    mat-card-content {
+      .or-with-email {
+        @include main.OrWithEmail-style;
+      }
+
+      form {
+        mat-icon {
+          color: main.$primary-color;
+        }
+
+        .full-width {
+          width: main.$width;
+        }
+
+        .aLink {
+          float: right;
+          padding-right: 60px;
+          text-decoration: none;
+        }
+
+        button {
+          background-color: main.$primary-color;
+          color: main.$white;
+        }
+      }
+
+      .concat {
+        img {
+          width: main.$spacing-large;
+          height: main.$spacing-large;
+          @include main.border-radius(50%);
+        }
+      }
+    }
+  }
+}
+
+
+

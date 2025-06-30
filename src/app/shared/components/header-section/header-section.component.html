@@ -1,0 +1,12 @@
+<header class="about-us-header">
+  <div class="about-cover"></div>
+    <ng-content select="[about-image]"></ng-content>
+  <div class="about-us-info wow animate__fadeIn" data-wow-delay=".2s">
+    <h1><ng-content select="[about-title]"></ng-content></h1>
+    <nav aria-label="breadcrumb">
+      <p>
+        <ng-content select="[about-link]"></ng-content><ng-content select="[about-breadcrumb]"></ng-content>
+      </p>
+    </nav>
+  </div>
+</header>

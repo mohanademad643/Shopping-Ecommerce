@@ -1,0 +1,139 @@
+<main class="order-details">
+  <div class="print-confirm">
+    <div class="confirm-icon">
+      <i class="fa-solid fa-print"></i>
+    </div>
+
+  </div>
+  <div class="order-details-container">
+    <div class="confirm-image wow animate__zoomIn" data-wow-delay=".1s">
+      <img src="assets/products/p-13.jpg" alt="Order Inovice">
+      <h1>Order Inovice</h1>
+    </div>
+    <div class="order-summary-group">
+      <div class="order-summary wow animate__fadeInUp" data-wow-delay=".1s">
+        <h2>Total</h2>
+        <p class="total-amount">{{Totalprice()| currency:"$"}}</p>
+      </div>
+      <div class="order-summary wow animate__fadeInUp" data-wow-delay=".2s">
+        <h3>Order Items</h3>
+        <p>0{{orderitem()}}</p>
+      </div>
+
+      <div class="order-summary wow animate__fadeInUp" data-wow-delay=".3s">
+        <h3>Total Quantity</h3>
+        <p>0{{Totalquantity()}}</p>
+      </div>
+
+      <div class="order-summary wow animate__fadeInUp" data-wow-delay=".4s">
+        <h3>Items Cost</h3>
+        <p>{{Totalprice()| currency:"$"}}</p>
+      </div>
+
+      <div class="order-summary wow animate__fadeInUp" data-wow-delay=".5s">
+        <h3>Estimated Delivery</h3>
+        <p>3 days</p>
+      </div>
+      <div class="order-summary wow animate__fadeInUp" data-wow-delay=".6s">
+        <h3>Shipping Cost</h3>
+        <p class="Delivery">+$0.00</p>
+      </div>
+      <div class="order-summary wow animate__fadeInUp" data-wow-delay=".7s">
+        <h3>Delivery Type</h3>
+        <p class="Delivery">+$0.00</p>
+      </div>
+      <div class="order-summary wow animate__fadeInUp" data-wow-delay=".8s">
+        <h3>Coupon Code</h3>
+        <p class="Coupon">-0%</p>
+      </div>
+
+
+      <div class="order-summary wow animate__fadeInUp" data-wow-delay=".9s">
+        <h3>Delivery Type</h3>
+        <p>Normal</p>
+      </div>
+      @if (cardInfomation()?.typeCardCheckout == 'Card') {
+      <div class="card-data">
+        <div class="order-summary wow animate__fadeInUp" data-wow-delay=".1s">
+          <h3>Card Name</h3>
+          <p>{{cardInfomation().Name}}</p>
+        </div>
+        <div class="order-summary wow animate__fadeInUp" data-wow-delay=".2s">
+          <h3>Card number</h3>
+          <p>{{cardInfomation().number}}</p>
+        </div>
+        <div class="order-summary wow animate__fadeInUp" data-wow-delay=".3s">
+          <h3>Card expiryDate</h3>
+          <p>{{cardInfomation().expiryDate}}</p>
+        </div>
+        <div class="order-summary wow animate__fadeInUp" data-wow-delay=".4s">
+          <h3>Card cvv</h3>
+          <p>{{cardInfomation().cvv}}</p>
+        </div>
+      </div>
+      }
+
+      @if (cardInfomation()?.typeCardCheckout == 'Deleviry') {
+      <div class="deleviry-data">
+        <div class="order-summary wow animate__fadeInUp" data-wow-delay=".1s">
+          <h3>Full Name</h3>
+          <p>{{cardInfomation().fullName}}</p>
+        </div>
+        <div class="order-summary wow animate__fadeInUp" data-wow-delay=".2s">
+          <h3>Address</h3>
+          <p>{{cardInfomation().address}}</p>
+        </div>
+        <div class="order-summary wow animate__fadeInUp" data-wow-delay=".3s">
+          <h3>City</h3>
+          <p>{{cardInfomation().city}}</p>
+        </div>
+        <div class="order-summary wow animate__fadeInUp" data-wow-delay=".4s">
+          <h3>Postal Code</h3>
+          <p>{{cardInfomation().postalCode}}</p>
+        </div>
+        <div class="order-summary wow animate__fadeInUp" data-wow-delay=".4s">
+          <h3>Phone Number</h3>
+          <p>{{cardInfomation().phoneNumber}}</p>
+        </div>
+      </div>
+      }
+    </div>
+    <section>
+          @for (item of getallconfirm(); track item.id ; let i =$index) {
+
+    <div class="confirm-product wow animate__fadeInUp" [attr.data-wow-delay]="(i * 0.05) + 's'">
+      <p>0{{i+1}}</p>
+      <div class="confirm-info">
+        <h1>{{ item.title }}</h1>
+        <p>{{ item.quantity * item.newPrice | currency : "$"}}</p>
+      </div>
+      <span>Quantity:
+        <p>{{ item.quantity }}</p>
+      </span>
+    </div>
+
+    }
+
+    </section>
+
+
+
+
+
+    <div class="address-details wow animate__fadeInUp" data-wow-delay=".1s">
+      <h3>Address</h3>
+      <h2>Home Address</h2>
+      <div class="address-info">
+        <p>Area 1, Street, City, Government</p>
+        <p>Area 1, Street, City, Government</p>
+        <p>Area 1, Street, City, Government</p>
+        <p>Area 1, Street, City, Government.....</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="confirm-back-buttons wow animate__bounceIn" data-wow-delay=".2s">
+    <button [routerLink]="Totalquantity() > 0 ? '/OrderConfirmed' : null">Confirm</button>
+    <a href="#">Back</a>
+  </div>
+</main>

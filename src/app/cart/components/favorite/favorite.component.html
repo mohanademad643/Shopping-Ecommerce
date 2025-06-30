@@ -1,0 +1,96 @@
+<main class="Favorite_section">
+  <app-header-section class="wow fadeInUp" data-wow-delay="0.1s">
+    <div class="about-us-image" about-image>
+      <img
+        src="assets/favorite.jpg"
+        height="400px"
+        width="100%"
+        alt="Favorite_Image"
+      />
+    </div>
+    <div about-title>Favorite</div>
+    <ng-container about-breadcrumb
+      ><a
+        about-link
+        routerLink="/Feature"
+        class="text-light text-decoration-none"
+        >Home</a
+      >
+      /Favorite</ng-container
+    >
+  </app-header-section>
+
+  @if(!endResponse() ){
+    <app-favorite-skeleton></app-favorite-skeleton>
+   }@else{
+  <section
+    class="empty_fevorite"
+    [ngClass]="{
+      Emptyfavorite: getlenght() <= 0,
+      EmptyfavoriteDeleted: getlenght() > 0
+    }"
+  >
+    <div class="image">
+      <img src="assets/empty.webp" alt="empty_image" />
+    </div>
+    <p>No Favourites Products</p>
+    <span routerLink="/Feature">Continue Shopping</span>
+  </section>
+  <section class="table_cart" [ngClass]="{ deleteTable: getlenght() <= 0 }">
+ 
+
+    <table class="cart-table wow fadeInUp" data-wow-delay=".1s">
+      <thead>
+        <tr>
+          <th>
+            <h2>image</h2>
+          </th>
+          <th>
+            <h2></h2>
+          </th>
+          <th>
+            <h2>Price</h2>
+          </th>
+          <th>
+            <h2>Stock</h2>
+          </th>
+          <th>
+            <h2>option</h2>
+          </th>
+          <th>
+            <h2></h2>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (product of FavoriteData(); track product.id;let i =$index) {
+        <tr class="wow fadeInUp" [attr.data-wow-delay]="i * 0.05 + 's'">
+          <td><img [src]="product.image" alt="{{ product.title }}" /></td>
+          <td>
+            <p class="title_prd">{{ product.title }}</p>
+          </td>
+          <td>
+            <span>${{ product.newPrice }}</span>
+          </td>
+          <td>
+            <div class="stock">In stock</div>
+          </td>
+          <td>
+            <i class="fa-solid fa-trash-can" (click)="DeleteItem(product)"></i>
+          </td>
+          <td>
+            <i
+              class="fa-solid fa-eye"
+              [routerLink]="['/product/' + product.id]"
+            ></i>
+          </td>
+        </tr>
+
+        }
+      </tbody>
+    </table>
+  </section>
+  }
+</main>
+
+<app-newsletter></app-newsletter>

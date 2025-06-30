@@ -1,0 +1,147 @@
+@use "/src/app/product/scss/productStyle" as main;
+
+.trend_product {
+  > h1 {
+    text-align: center;
+    padding: main.$midumlSize;
+  }
+  .trend_headprd {
+    @include main.flex-style;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: main.$midumlSize;
+    .all {
+      color: main.$primary-color;
+    }
+    p {
+      margin-left: main.$midumlSize;
+      font-size: main.$midumlSize;
+      line-height: 1;
+      color: white;
+      cursor: pointer;
+      position: relative;
+      background-color: black;
+      border: 1px solid black;
+      padding: main.$smailSize main.$midumlSize;
+      border-radius: 50px;
+      transition: .3s ease;
+
+      @media (max-width:500px) {
+        font-size: 14px;
+      }
+      &:hover {
+        color: main.$primary-color;
+        background-color: white;
+      }
+    }
+  }
+  max-width: 100%;
+  padding: main.$midumlSize;
+  .ternd_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+    @media (max-width:600px) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ternd_pox {
+      .ternd_image {
+        .checked-icon{
+          position: absolute;
+          top: 0;
+          right: 0;
+          margin: 5px main.$smailSize;
+          i{
+            font-size: 15px;
+            background-color: white;
+            border-radius: 50%;
+            padding: main.$smailSize;
+
+          }
+      }
+       @include main.box-style;
+        &:hover::after{
+        top: -2000px;
+
+        }
+        &::after {
+          content: "";
+          @include main.After-style;
+        }
+
+        &:hover {
+          .icon_box {
+            right: 0;
+          }
+
+        }
+        @include main.icon-style;
+      }
+      .ternd_content {
+        padding: main.$midumlSize 0px;
+        @include main.btn-Cart-Style;
+        .Quantity-Avilable{
+          p{
+        font-size: 17px;
+        font-weight: 400;
+
+        span{
+          font-size: 14px;
+          color: #999;
+          margin-left: 5px;
+        }
+      }
+      }
+
+      > p {
+        font-size: 15px;
+        color: rgba(0, 0, 0, 0.8);
+        padding: 15px 0;
+        font-weight: 400;
+        margin: 0;
+        line-height: 1.4;
+        cursor: pointer;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+      h1 {
+        font-size: 25px;
+        margin: 0;
+        font-weight: 500;
+      }
+        .about_price {
+          .rating {
+            i {
+              color: main.$primary-color;
+            }
+          }
+          .ternd_price {
+            @include main.flex-style;
+
+            p {
+              margin-bottom: 0;
+              font-weight: bold;
+              color: main.$primary-color;
+              font-family: math;
+              font-size: 17px;
+            }
+            span {
+              margin-left: main.$smailSize;
+              color: #ccc;
+              font-family: math;
+              font-size: 17px;
+              text-decoration: line-through;
+            }
+          }
+          @include main.flex-style;
+          justify-content: space-between;
+
+        }
+      }
+    }
+  }
+}

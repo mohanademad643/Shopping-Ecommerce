@@ -1,0 +1,122 @@
+<main class="contact-parent">
+  <app-header-section class=" wow fadeInUp" data-wow-delay="0.1s">
+    <div class="about-us-image" about-image>
+      <img src="assets/Contact-us.jpeg" height="400px" width="100%" alt="About-Us_Image">
+    </div>
+    <div about-title>Contact Us</div>
+    <ng-container about-breadcrumb><a about-link routerLink="/Feature" class="text-light text-decoration-none">Home</a>
+      /Contact Us</ng-container>
+  </app-header-section>
+  <section class="information">
+    <h2 class="wow animate__bounceIn" data-wow-delay=".3s">Contact Us</h2>
+    <h1 class="wow animate__bounceIn" data-wow-delay=".4s">Let's Get In Touch</h1>
+
+    <div class="info-container">
+      <article class="info-box wow fadeInUp flex-fill" data-wow-delay=".1s">
+        <div class="info-icon">
+          <mat-icon>location_on</mat-icon>
+        </div>
+        <h2>Location</h2>
+        <p>Cairo, Egypt in El Alamein</p>
+      </article>
+      <article class="info-box active wow fadeInUp flex-fill" data-wow-delay=".3s">
+        <div class="info-icon">
+          <mat-icon>email</mat-icon>
+        </div>
+
+        <h2>Email Address</h2>
+        <p>info.example.com</p>
+      </article>
+      <article class="info-box wow fadeInUp flex-fill" data-wow-delay=".5s">
+        <div class="info-icon">
+          <mat-icon>phone</mat-icon>
+        </div>
+        <h2>Phone</h2>
+        <p>+20 123 456 789</p>
+      </article>
+    </div>
+  </section>
+
+
+  <section class="contact-form">
+    <div class="form-map-wrapper wow animate__fadeInLeft" data-wow-delay=".1s">
+      <div class="form-section">
+        <mat-card>
+          <mat-card-content>
+            <form name="loginForm" method="post" [formGroup]="ConcatForm">
+              <div class="Full-Name-input wow animate__fadeInLeft" data-wow-delay=".1s">
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Full Name</mat-label>
+                  <input formControlName="fullName" matInput placeholder="Enter Your Full Name" required />
+                  <mat-icon matSuffix>person</mat-icon>
+                  <mat-error *ngIf="ConcatForm.controls['fullName']?.errors?.['required']">
+                    Full Name is required
+                  </mat-error>
+                </mat-form-field>
+              </div>
+
+              <div class="email-input wow animate__fadeInLeft" data-wow-delay=".2s">
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Email</mat-label>
+                  <input formControlName="email" matInput placeholder="Enter Your Email" required />
+                  <mat-icon matSuffix>email</mat-icon>
+                  <mat-error *ngIf="ConcatForm.controls['email']?.errors?.['required']">
+                    Email is required
+                  </mat-error>
+                  <mat-error *ngIf="ConcatForm.controls['email']?.errors?.['pattern']">
+                    Invalid email format
+                  </mat-error>
+                </mat-form-field>
+              </div>
+
+              <div class="phoneNumber-input wow animate__fadeInLeft" data-wow-delay=".3s">
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Phone Number</mat-label>
+                  <input formControlName="phoneNumber" matInput placeholder="01xxxxxxxxx" required />
+                  <mat-icon matSuffix>phone</mat-icon>
+                  <mat-error *ngIf="ConcatForm.controls['phoneNumber']?.errors?.['required']">
+                    Phone Number is required
+                  </mat-error>
+                  <mat-error *ngIf="ConcatForm.controls['phoneNumber']?.errors?.['pattern']">
+                    Invalid Phone Number (must be 11 digits)
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="subject-input wow animate__fadeInLeft" data-wow-delay=".4s">
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Subject</mat-label>
+                  <input formControlName="subject" matInput placeholder="Enter Subject" required />
+                  <mat-icon matSuffix>subject</mat-icon>
+                  <mat-error *ngIf="ConcatForm.controls['subject']?.errors?.['required']">
+                    Subject is required
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="description-input wow animate__fadeInLeft" data-wow-delay=".5s">
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Description</mat-label>
+                  <textarea formControlName="description" matInput placeholder="Enter Description" required></textarea>
+                  <mat-icon matSuffix>description</mat-icon>
+                  <mat-error *ngIf="ConcatForm.controls['description']?.errors?.['required']">
+                    Description is required
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <button mat-flat-button color="primary" (click)="onSubmit()" class="mt-2 w-100 wow animate__bounceIn" data-wow-delay=".6s">
+                Next
+              </button>
+            </form>
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+
+      <div class="map-section wow animate__fadeInRight" data-wow-delay=".2s">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.735091892924!2d31.24366651511284!3d30.048680281879327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583f7bbaaa20c7%3A0x5e447a3f8ff9e1f!2sCairo%2C%20Egypt!5e0!3m2!1sen!2sus!4v1634619633274!5m2!1sen!2sus"
+          width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+          aria-label="Google Maps location of the company"></iframe>
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,71 @@
+<div class="login-page">
+
+  <mat-card>
+    <mat-card-content>
+      <h1 class="m-0 mb-2 text-900 text-3xl font-bold">Sign In</h1>
+      <span class="block  text-primary text-400 text-sm font-semibold">Your Social Campaigns</span>
+      <div class="concat d-flex flex-wrap mt-2 justify-content-center gap-2 mb-1">
+        <p class="text-13px cursor-pointer d-flex flex-wrap justify-content-center gap-2 border border-secondary border-1 p-1 ps-4 rounded-3">
+          <span>Sign In With Google</span>
+          <img src="assets/google.jpg" class="mr-2 " alt="Google">
+        </p>
+        <p class="text-13px cursor-pointer d-flex flex-wrap justify-content-center gap-2 border border-secondary border-1 p-1 ps-4 rounded-3">
+          <span>Sign In With facebook</span>
+          <img src="assets/facebook.jpg" class="mr-2" alt="Apple">
+      </div>
+
+      <span class="or-with-email mb-4 text-sm"><p>Or with email</p></span>
+
+      <form (ngSubmit)="getUsersData()" name="loginForm" [formGroup]="loginFm">
+        <div class="emailInput">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+              formControlName="email"
+              matInput
+              placeholder="Enter email address" required
+            />
+
+            <mat-icon matSuffix>
+                email
+            </mat-icon>
+
+            <mat-error *ngIf="loginFm.controls['email']?.invalid  && loginFm.controls['email'].errors?.['required']">
+                Email is required
+              </mat-error>
+              <mat-error *ngIf="loginFm.controls['email']?.invalid  && loginFm.controls['email'].errors?.['pattern']">
+                Invalid email format
+              </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <span>
+            <a class="text-link" class="aLink" routerLink="/enter/email">Forgot Password?</a>
+          </span>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" placeholder="Enter Your Password" matInput [type]=" hide() ? 'password' : 'text'" required />
+
+            <mat-icon  mat-icon-button matSuffix (click)="hide.set(!hide())" [attr.aria-label]="'hide Password'"
+            [attr.aria-pressed]="hide()">
+                {{hide() ? 'visibility_off' : 'visibility'}}
+            </mat-icon>
+
+        <mat-error  *ngIf="loginFm.controls['password']?.invalid  && loginFm.controls['password'].errors?.['required']">
+            Password is required
+          </mat-error>
+
+          <mat-error  *ngIf="loginFm.controls['password']?.invalid && loginFm.controls['password'].errors?.['minlength']">
+          must be at least 6 characters long
+          </mat-error>
+        </mat-form-field>
+        </div>
+        <button mat-flat-button color="Login mt-2 w-100">Login</button>
+      </form>
+      <p class="text-sm mt-3 mb-4 font-bold text-400">Not a Member yet? <a routerLink="/enter/signup" class="text-primary font-medium ml-1 hover:text-primary-400 transition-duration-100">Sign up</a></p>
+
+    </mat-card-content>
+  </mat-card>
+
+</div>

@@ -1,0 +1,278 @@
+$primary-color: #2E8B57;
+$white-color: #fff;
+$secondary-color: #6c757d;
+$background-color: #f8f9fa;
+$text-color: #333;
+$border-radius: 10px;
+$box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+.about-us-parent {
+  font-family: Arial, sans-serif;
+  color: $text-color;
+  padding: 0 0 50px;
+  position: relative;
+
+
+  .company-history {
+    padding: 8rem 25px;
+
+    .history-content {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+
+      .history-image {
+        flex: 1 1 50%;
+        max-width: 50%;
+
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          border-radius: $border-radius;
+          box-shadow: $box-shadow;
+        }
+      }
+
+      .history-text {
+        flex: 1 1 50%;
+        max-width: 50%;
+
+        h2 {
+          color: black;
+          font-size: 2.5rem;
+          font-weight: 600;
+          margin-bottom: 40px;
+          font-family: emoji;
+        }
+
+        p {
+          font-size: 1rem;
+          color: $secondary-color;
+          line-height: 1.3;
+          margin: 40px 0;
+        }
+
+        // Icon List
+        .company-history-list {
+          .list-box {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            overflow: hidden;
+
+            .history-icon {
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              background-color: $background-color;
+              padding: 5px 10px;
+              border-radius: 50px;
+              box-shadow: $box-shadow;
+              transition: background-color 0.3s ease;
+
+              i {
+                font-size: 1.2rem;
+                color: $primary-color;
+              }
+
+              p {
+                font-size: .8rem;
+                color: $text-color;
+                margin: 0;
+                line-height: 1.4;
+              }
+
+              &:hover {
+                background-color: lighten($background-color, 5%);
+              }
+            }
+          }
+        }
+
+        // CTA Button
+        .cta-section {
+          margin-top: 20px;
+
+          .cta-button {
+            display: inline-block;
+            background-color: $primary-color;
+            color: $white-color;
+            padding: 10px 20px;
+            border-radius: $border-radius;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            box-shadow: $box-shadow;
+
+            &:hover {
+              background-color: darken($primary-color, 10%);
+            }
+          }
+        }
+      }
+    }
+
+    // Media Query for Medium Screens
+    @media (max-width: 768px) {
+      .history-content {
+        flex-direction: column;
+
+        .history-image {
+          max-width: 100%;
+          flex: 1 1 100%; /* Make image full width */
+        }
+
+        .history-text {
+          max-width: 100%;
+          flex: 1 1 100%; /* Make text section full width */
+        }
+      }
+    }
+  }
+
+
+  // Mission, Vision, and Values
+  .mission-vision-values {
+    padding: 40px;
+    background-color: $background-color;
+    .mission-vision-values-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      .mission, .vision, .values {
+        background-color: $white-color;
+        padding: 20px;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        text-align: center;
+        max-width: 350px;
+        i {
+          font-size: 2rem;
+          color: $primary-color;
+          margin-bottom: 10px;
+        }
+        h2 {
+          margin-bottom: 10px;
+        }
+        p, ul {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+
+
+  // Testimonials
+  .customer-testimonials {
+    padding: 40px;
+    h2{
+      color: black;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    font-family: emoji;
+    text-align: center;
+    }
+    .testimonial-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(350px, auto));
+      gap: 10px;
+      @media (max-width:600px) {
+        display: flex;
+        flex-direction: column;
+      }
+      .testimonial {
+        background-color: $white-color;
+        padding: 20px;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        max-width: 500px;
+        i {
+          font-size: 2rem;
+          color: $primary-color;
+          margin-bottom: 10px;
+        }
+        p {
+          font-style: italic;
+        }
+        h4 {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+
+  // Awards and Achievements
+.awards-achievements {
+  padding: 40px;
+  text-align: center;
+
+  h2 {
+    color: black;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    font-family: emoji;
+  }
+
+  .achievements-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+
+    .achievement {
+      background-color: $white-color;
+      padding: 20px;
+      border-radius: $border-radius;
+      box-shadow: $box-shadow;
+      text-align: center;
+
+      i {
+        font-size: 3rem;
+        color: $primary-color;
+        margin-bottom: 15px;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: $primary-color;
+      }
+
+      p {
+        font-size: 1rem;
+        color: $text-color;
+      }
+    }
+  }
+}
+
+
+  // Sustainability
+  .sustainability {
+    padding: 40px;
+    background-color: $background-color;
+    text-align: center;
+  }
+
+  // Call to Action
+  .call-to-action {
+    padding: 40px;
+    text-align: center;
+    .cta-button {
+      background-color: $primary-color;
+      color: $white-color;
+      padding: 10px 20px;
+      border-radius: $border-radius;
+      text-decoration: none;
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+}

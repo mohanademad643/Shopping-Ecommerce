@@ -1,0 +1,239 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "oldPrice": 120,
+      "newPrice": 90,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor interdum nisi,a pellentesque nisi bibendum vel. Aliquam erat volutpat. Suspendisse potenti.",
+      "title": "Luxurious Modern Sofa Table",
+      "image": "assets/products/p-1.jpg",
+      "roles": "Designer",
+      "quantityAvailable": 35
+    },
+    {
+      "id": "2",
+      "oldPrice": 150,
+      "newPrice": 110,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor interdum nisi,a pellentesque nisi bibendum vel. Aliquam erat volutpat. Suspendisse potenti.",
+      "title": "Stylish Wooden Dining Table",
+      "image": "assets/products/p-2.jpg",
+      "roles": "Designer",
+      "quantityAvailable": 10
+    },
+    {
+      "id": "3",
+      "oldPrice": 200,
+      "newPrice": 160,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor interdum nisi,a pellentesque nisi bibendum vel. Aliquam erat volutpat. Suspendisse potenti.",
+      "title": "Classic Carpenter Vintage Armchair",
+      "image": "assets/products/p-3.jpg",
+      "roles": "Designer",
+      "quantityAvailable": 60
+    },
+    {
+      "id": "4",
+      "oldPrice": 180,
+      "newPrice": 150,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor interdum nisi,a pellentesque nisi bibendum vel. Aliquam erat volutpat. Suspendisse potenti.",
+      "title": "Elegant Carpenter Coffee Table",
+      "image": "assets/products/p-4.jpg",
+      "roles": "Carpenter",
+      "quantityAvailable": 98
+    },
+    {
+      "id": "5",
+      "oldPrice": 190,
+      "newPrice": 145,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor interdum nisi,a pellentesque nisi bibendum vel. Aliquam erat volutpat. Suspendisse potenti.",
+      "title": "Contemporary Design Coffee Table",
+      "image": "assets/products/p-5.jpg",
+      "roles": "Carpenter",
+      "quantityAvailable": 67
+    },
+    {
+      "id": "6",
+      "oldPrice": 210,
+      "newPrice": 180,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor interdum nisi,a pellentesque nisi bibendum vel. Aliquam erat volutpat. Suspendisse potenti.",
+      "title": "Rustic Handcrafted Coffee Table",
+      "image": "assets/products/p-6.jpg",
+      "roles": "Carpenter",
+      "quantityAvailable": 63
+    },
+    {
+      "id": "7",
+      "oldPrice": 100,
+      "newPrice": 80,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor interdum nisi,a pellentesque nisi bibendum vel. Aliquam erat volutpat. Suspendisse potenti.",
+      "title": "Modern Living Room Coffee Table",
+      "image": "assets/products/p-7.jpg",
+      "roles": "Manufacturer",
+      "quantityAvailable": 55
+    },
+    {
+      "id": "8",
+      "oldPrice": 153,
+      "newPrice": 130,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor interdum nisi,a pellentesque nisi bibendum vel. Aliquam erat volutpat. Suspendisse potenti.",
+      "title": "Versatile Wooden Coffee Table",
+      "image": "assets/products/p-8.jpg",
+      "roles": "Manufacturer",
+      "quantityAvailable": 86
+    },
+    {
+      "id": "9",
+      "oldPrice": 90,
+      "newPrice": 45,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor interdum nisi,a pellentesque nisi bibendum vel. Aliquam erat volutpat. Suspendisse potenti.",
+      "title": "Charming Wooden Coffee Table",
+      "image": "assets/products/p-9.jpg",
+      "roles": "Model",
+      "quantityAvailable": 92
+    },
+    {
+      "id": "10",
+      "oldPrice": 310,
+      "newPrice": 250,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor interdum nisi,a pellentesque nisi bibendum vel. Aliquam erat volutpat. Suspendisse potenti.",
+      "title": "Elegant Wooden Coffee Table",
+      "image": "assets/products/p-10.jpg",
+      "roles": "Model",
+      "quantityAvailable": 60
+    },
+    {
+      "id": "12",
+      "oldPrice": 140,
+      "newPrice": 84,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor interdum nisi,a pellentesque nisi bibendum vel. Aliquam erat volutpat. Suspendisse potenti.",
+      "title": "Chic Wooden Coffee Table",
+      "image": "assets/products/p-12.jpg",
+      "roles": "Best",
+      "quantityAvailable": 74
+    },
+    {
+      "id": "13",
+      "oldPrice": 253,
+      "newPrice": 184,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor interdum nisi,a pellentesque nisi bibendum vel. Aliquam erat volutpat. Suspendisse potenti.",
+      "title": "Stylish Wooden Coffee Table",
+      "image": "assets/products/p-13.jpg",
+      "roles": "Best",
+      "quantityAvailable": 57
+    },
+    {
+      "id": "14",
+      "oldPrice": 450,
+      "newPrice": 358,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor interdum nisi,a pellentesque nisi bibendum vel. Aliquam erat volutpat. Suspendisse potenti.",
+      "title": "Artistic Wooden Coffee Table",
+      "image": "assets/products/p-14.jpg",
+      "roles": "Best",
+      "quantityAvailable": 82
+    },
+    {
+      "id": "15",
+      "oldPrice": 72,
+      "newPrice": 26,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor interdum nisi,a pellentesque nisi bibendum vel. Aliquam erat volutpat. Suspendisse potenti.",
+      "title": "Spacious Wooden Coffee Table",
+      "image": "assets/products/p-15.jpg",
+      "roles": "New",
+      "quantityAvailable": 81
+    },
+    {
+      "id": "16",
+      "oldPrice": 83,
+      "newPrice": 63,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor interdum nisi,a pellentesque nisi bibendum vel. Aliquam erat volutpat. Suspendisse potenti.",
+      "title": "Modern Elegance Coffee Table",
+      "image": "assets/products/p-16.jpg",
+      "roles": "New",
+      "quantityAvailable": 56
+    },
+    {
+      "id": "17",
+      "oldPrice": 75,
+      "newPrice": 42,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor interdum nisi,a pellentesque nisi bibendum vel. Aliquam erat volutpat. Suspendisse potenti.",
+      "title": "Luxury Wooden Coffee Table",
+      "image": "assets/products/p-17.jpg",
+      "roles": "Manufacturer",
+      "quantityAvailable": 87
+    },
+    {
+      "id": "18",
+      "oldPrice": 130,
+      "newPrice": 86,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor interdum nisi,a pellentesque nisi bibendum vel. Aliquam erat volutpat. Suspendisse potenti.",
+      "title": "Elegant Living Room Coffee Table",
+      "image": "assets/products/p-18.jpg",
+      "roles": "Manufacturer",
+      "quantityAvailable": 70
+    },
+    {
+      "id": "19",
+      "oldPrice": 150,
+      "newPrice": 90,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor interdum nisi,a pellentesque nisi bibendum vel. Aliquam erat volutpat. Suspendisse potenti.",
+      "title": "Contemporary Living Room Coffee Table",
+      "image": "assets/products/p-19.jpg",
+      "roles": "Manufacturer",
+      "quantityAvailable": 35
+    },
+    {
+      "id": "20",
+      "oldPrice": 402,
+      "newPrice": 320,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor interdum nisi,a pellentesque nisi bibendum vel. Aliquam erat volutpat. Suspendisse potenti.",
+      "title": "Stylish and Practical Coffee Table",
+      "image": "assets/products/p-20.jpg",
+      "roles": "Manufacturer",
+      "quantityAvailable": 40
+    }
+  ],
+  "cartProduct": [],
+  "FavoriteProduct": [],
+  "Auth": [
+    {
+      "id": "0",
+      "Fname": "Mohammed",
+      "Lname": "emad",
+      "phoneNumber": "01200585420",
+      "email": "mohammed.emad@gmail.com",
+      "password": "01200585420",
+      "repassword": "01200585420",
+      "Gender":"Male"
+    },
+    {
+      "id": "1",
+      "Fname": "Ahmed",
+      "Lname": "Rammdan",
+      "phoneNumber": "01200585420",
+      "email": "Ahmed.Ramadan@gmail.com",
+      "password": "01200585420",
+      "repassword": "01200585420",
+       "Gender":"Male"
+    },
+    {
+      "id": "1726466779769",
+      "Fname": "elking",
+      "Lname": "one",
+      "phoneNumber": "01200346424",
+      "email": "elking@gmail.com",
+      "password": "01200346424",
+      "repassword": "01200346424",
+       "Gender":"Male"
+    },
+    {
+      "id": "1726467507405",
+      "Fname": "elord",
+      "Lname": "more",
+      "phoneNumber": "01200342524",
+      "email": "elord@gmail.com",
+      "password": "01200342524",
+      "repassword": "01200342524",
+       "Gender":"Male"
+    }
+  ],
+  "Orders": []
+}

@@ -1,0 +1,190 @@
+
+$primary-color: #2e8b57;
+$text-color: #333;
+$background-color: #f9f9f9;
+$white-color: #fff;
+$secondary-color: #6c757d;
+$background-color: #f8f9fa;
+$border-radius: 10px;
+$box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+main {
+
+  .section-bg {
+    background-color: $background-color;
+    padding: 60px 0;
+    border-radius: 8px;
+  }
+
+  .Service-start {
+    .service-connect {
+      p {
+        font-size: 1.1rem;
+        color: $primary-color;
+        margin-bottom: 10px;
+        color: #2e8b57;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+        color: $text-color;
+        font-weight: 700;
+        span {
+          color: #2e8b57;
+        }
+      }
+    }
+
+    .service-connect-2 {
+      .connect-info {
+        background-color: #2e8b57;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+        i {
+          font-size: 3rem;
+        }
+
+        .text-white {
+          margin-left: 15px;
+
+          h2 {
+            font-size: 2rem;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+    .service-connect-3 {
+      margin: 2rem 0;
+      .service-box {
+        text-align: start;
+        transition: transform 0.3s ease;
+        &:hover {
+          transform: scale(1.05);
+        }
+        i {
+          font-size: 2rem;
+          color: $primary-color;
+          margin-bottom: 15px;
+        }
+
+        h5 {
+          font-size: 1.5rem;
+          margin: 15px 0;
+        }
+
+        span {
+          display: block;
+          color: #666;
+        }
+      }
+    }
+  }
+
+  // Service Cards Section Styles
+  #services-cards {
+    .row {
+      margin: 30px 0;
+
+      h3 {
+        font-size: 1.8rem;
+        color: $text-color;
+        margin-bottom: 15px;
+        font-weight: 500;
+      }
+
+      p {
+        margin-bottom: 20px;
+        color: #555;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+          color: $text-color;
+
+          i {
+            color: $primary-color;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  // Alt Services Section Styles
+  #alt-services-2 {
+    margin: 5rem 0;
+    .row {
+      .info-box {
+        h3 {
+          font-size: 1.8rem;
+          color: $text-color;
+          margin-bottom: 15px;
+        }
+
+        p {
+          color: #666;
+          margin-bottom: 20px;
+        }
+
+        .icon-box {
+          gap: 10px;
+          margin-bottom: 20px;
+          .icon-btn {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all .3s ease;
+            &:hover{
+              background-color: $primary-color;
+              i{
+                color: white;
+              }
+
+            }
+            i {
+              font-size: 2rem;
+              color: $primary-color;
+
+            }
+          }
+
+          h4 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+
+            a {
+              color: $text-color;
+              text-decoration: none;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+
+          p {
+            color: #666;
+          }
+        }
+      }
+
+      .col-lg-6 {
+
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+
+
+}
