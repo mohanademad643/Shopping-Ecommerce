@@ -151,7 +151,7 @@
           </div>
         </section>
 
-        <button mat-flat-button color="mt-2 w-100">Register</button>
+       <button mat-flat-button color="mt-2 w-100"[disabled]="registerForm.invalid" >Register</button>
       </form>
       <p class="text-sm mt-3 mb-4 font-bold text-400">If You Have Account? <a routerLink="/enter/signtin"
           class="text-primary font-medium ml-1 hover:text-primary-400 transition-duration-100">Sign In</a></p>
