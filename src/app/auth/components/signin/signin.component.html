@@ -61,7 +61,7 @@
           </mat-error>
         </mat-form-field>
         </div>
-        <button mat-flat-button color="Login mt-2 w-100">Login</button>
+         <button mat-flat-button color="Login mt-2 w-100" [disabled]="loginFm.invalid" >Login</button>
       </form>
       <p class="text-sm mt-3 mb-4 font-bold text-400">Not a Member yet? <a routerLink="/enter/signup" class="text-primary font-medium ml-1 hover:text-primary-400 transition-duration-100">Sign up</a></p>
 
